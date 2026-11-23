@@ -1,0 +1,6 @@
+endpoint 3775/2386 delta 3/200000000000000 left 377499999999996421/238600000000000000
+frozen odds (units 1e-10) [502492095, 515270524, 528601005, 542501939, 356890721, 5255754299]
+archive sha256 711f6a8446ecb17eea03384ab964a9dd60f0586be1401e9edd46a321c873f314
+floor(1e15 original squared-magnetization lower bound) 215386342
+floor(1e15 uniform squared-magnetization lower bound) 44732026
+PASS 24 bridge edges, 40 class odds, frozen high sets, 120 physical rows and uniform left interval

@@ -1,0 +1,348 @@
+{
+  "binding": {
+    "kernel_source_sha256": "7aebde32d9c10a4311e0e43692074bf3797f2ccce2802a3f4254e5555a74ddd9",
+    "binary_sha256": "dceddb72cb6ba150781dbf7fa79a98da6fd55fc7572890269dc16dc9116e2c85",
+    "inputs": {
+      "point": "3775/2386",
+      "archive_sha256": "711f6a8446ecb17eea03384ab964a9dd60f0586be1401e9edd46a321c873f314",
+      "source_sha256": "b8c8cec1644bf8bd29978d514643a7044377eb12fcd0e157d950cd2980bd2cb6",
+      "files": {
+        "model.txt": "98229bd878ded03d8db70077ae4d945edc00c4469b981eea8eaca85a1e4f38ce",
+        "owners.u16le": "f18d73822bf2857df9f760a5429c8b2937abf1394c8f80504041308709ffcce5"
+      },
+      "classes": [
+        0,
+        1,
+        3,
+        6,
+        7,
+        15,
+        22,
+        23,
+        24,
+        25,
+        27,
+        30,
+        60,
+        105
+      ],
+      "fields_per_class": 262144
+    },
+    "prefix_bits": 2
+  },
+  "classes": [
+    {
+      "source_class": 0,
+      "bounds": {
+        "upper": {
+          "checked": 262144,
+          "exempt": 0,
+          "negative_exempt": 0,
+          "minimum_field": 288,
+          "minimum_sign": 1
+        },
+        "low": {
+          "checked": 262132,
+          "exempt": 12,
+          "negative_exempt": 12,
+          "minimum_field": 131424,
+          "minimum_sign": 1
+        }
+      },
+      "seconds": 5.74195,
+      "peak_rss_bytes": 213598208,
+      "log_sha256": "de8ffd3b3c75e0164933fc87fc9fe26283b32082a6a953a0f5e0b62935becdab"
+    },
+    {
+      "source_class": 1,
+      "bounds": {
+        "upper": {
+          "checked": 262144,
+          "exempt": 0,
+          "negative_exempt": 0,
+          "minimum_field": 32800,
+          "minimum_sign": 1
+        },
+        "low": {
+          "checked": 261634,
+          "exempt": 510,
+          "negative_exempt": 510,
+          "minimum_field": 167392,
+          "minimum_sign": 1
+        }
+      },
+      "seconds": 3.63554,
+      "peak_rss_bytes": 213155840,
+      "log_sha256": "064dee64d323134e12e55ed015487347ecb55491ab85c81133396a332f1439ab"
+    },
+    {
+      "source_class": 3,
+      "bounds": {
+        "upper": {
+          "checked": 262144,
+          "exempt": 0,
+          "negative_exempt": 0,
+          "minimum_field": 209150,
+          "minimum_sign": 1
+        },
+        "low": {
+          "checked": 261763,
+          "exempt": 381,
+          "negative_exempt": 381,
+          "minimum_field": 22143,
+          "minimum_sign": 1
+        }
+      },
+      "seconds": 2.7649,
+      "peak_rss_bytes": 213139456,
+      "log_sha256": "ffc493fae393086980ccd107606c0a712901b87426b450e7b695f6755f384529"
+    },
+    {
+      "source_class": 6,
+      "bounds": {
+        "upper": {
+          "checked": 262144,
+          "exempt": 0,
+          "negative_exempt": 0,
+          "minimum_field": 184268,
+          "minimum_sign": 1
+        },
+        "low": {
+          "checked": 261632,
+          "exempt": 512,
+          "negative_exempt": 512,
+          "minimum_field": 153373,
+          "minimum_sign": 1
+        }
+      },
+      "seconds": 2.16682,
+      "peak_rss_bytes": 213123072,
+      "log_sha256": "b33f915216309514bbd1accb61b8dc4b6841b09792d66171963ec042e059f58d"
+    },
+    {
+      "source_class": 7,
+      "bounds": {
+        "upper": {
+          "checked": 262144,
+          "exempt": 0,
+          "negative_exempt": 0,
+          "minimum_field": 53196,
+          "minimum_sign": 1
+        },
+        "low": {
+          "checked": 261376,
+          "exempt": 768,
+          "negative_exempt": 768,
+          "minimum_field": 132031,
+          "minimum_sign": 1
+        }
+      },
+      "seconds": 3.19442,
+      "peak_rss_bytes": 213090304,
+      "log_sha256": "ce370890c4c69c7451332fd17af3128361e8b2c8fa683d216adfa054690f36f9"
+    },
+    {
+      "source_class": 15,
+      "bounds": {
+        "upper": {
+          "checked": 262144,
+          "exempt": 0,
+          "negative_exempt": 0,
+          "minimum_field": 133022,
+          "minimum_sign": 1
+        },
+        "low": {
+          "checked": 261126,
+          "exempt": 1018,
+          "negative_exempt": 1018,
+          "minimum_field": 16885,
+          "minimum_sign": 1
+        }
+      },
+      "seconds": 3.34455,
+      "peak_rss_bytes": 213090304,
+      "log_sha256": "59ce17e87565ee9d237bf8b7f9659b040755b22909b0250305111d6adc71bff1"
+    },
+    {
+      "source_class": 22,
+      "bounds": {
+        "upper": {
+          "checked": 262144,
+          "exempt": 0,
+          "negative_exempt": 0,
+          "minimum_field": 53196,
+          "minimum_sign": 1
+        },
+        "low": {
+          "checked": 261632,
+          "exempt": 512,
+          "negative_exempt": 512,
+          "minimum_field": 187856,
+          "minimum_sign": 1
+        }
+      },
+      "seconds": 2.94012,
+      "peak_rss_bytes": 213123072,
+      "log_sha256": "bd6d61e41f6661dec92c86a25be535b98de9ddf9d6e7a7460409485e8caf4d42"
+    },
+    {
+      "source_class": 23,
+      "bounds": {
+        "upper": {
+          "checked": 262144,
+          "exempt": 0,
+          "negative_exempt": 0,
+          "minimum_field": 13278,
+          "minimum_sign": 1
+        },
+        "low": {
+          "checked": 261122,
+          "exempt": 1022,
+          "negative_exempt": 1022,
+          "minimum_field": 19180,
+          "minimum_sign": 1
+        }
+      },
+      "seconds": 5.85052,
+      "peak_rss_bytes": 213090304,
+      "log_sha256": "21fc7455303cb4b5e0a784c965bb57ae980f22b394cc0be153c330685e4dbe50"
+    },
+    {
+      "source_class": 24,
+      "bounds": {
+        "upper": {
+          "checked": 262144,
+          "exempt": 0,
+          "negative_exempt": 0,
+          "minimum_field": 141864,
+          "minimum_sign": 1
+        },
+        "low": {
+          "checked": 261127,
+          "exempt": 1017,
+          "negative_exempt": 1017,
+          "minimum_field": 187804,
+          "minimum_sign": 1
+        }
+      },
+      "seconds": 20.9695,
+      "peak_rss_bytes": 213516288,
+      "log_sha256": "d26a7f0905b949c695a97b68651e1d77c840ae9403d1c8ed6be83b2a5e82761e"
+    },
+    {
+      "source_class": 25,
+      "bounds": {
+        "upper": {
+          "checked": 262144,
+          "exempt": 0,
+          "negative_exempt": 0,
+          "minimum_field": 601,
+          "minimum_sign": 1
+        },
+        "low": {
+          "checked": 261760,
+          "exempt": 384,
+          "negative_exempt": 384,
+          "minimum_field": 189229,
+          "minimum_sign": 1
+        }
+      },
+      "seconds": 36.4748,
+      "peak_rss_bytes": 213532672,
+      "log_sha256": "9ddaf890b87c3d6e4efae214ae318bc5dff330b6938f9d10c9f659a2d17eb4cb"
+    },
+    {
+      "source_class": 27,
+      "bounds": {
+        "upper": {
+          "checked": 262144,
+          "exempt": 0,
+          "negative_exempt": 0,
+          "minimum_field": 8010,
+          "minimum_sign": 1
+        },
+        "low": {
+          "checked": 261122,
+          "exempt": 1022,
+          "negative_exempt": 1022,
+          "minimum_field": 182764,
+          "minimum_sign": 1
+        }
+      },
+      "seconds": 68.0322,
+      "peak_rss_bytes": 199770112,
+      "log_sha256": "e41e1a7d210e60f2859f5cc5a41f93297e92899a8b0a35359f2b90bf187f32f9"
+    },
+    {
+      "source_class": 30,
+      "bounds": {
+        "upper": {
+          "checked": 262144,
+          "exempt": 0,
+          "negative_exempt": 0,
+          "minimum_field": 52940,
+          "minimum_sign": 1
+        },
+        "low": {
+          "checked": 261762,
+          "exempt": 382,
+          "negative_exempt": 382,
+          "minimum_field": 187720,
+          "minimum_sign": 1
+        }
+      },
+      "seconds": 87.8817,
+      "peak_rss_bytes": 201605120,
+      "log_sha256": "b6b390af54b995bd1492764e9844618c1ec524f54565a43899c12099a6e5e2f7"
+    },
+    {
+      "source_class": 60,
+      "bounds": {
+        "upper": {
+          "checked": 262144,
+          "exempt": 0,
+          "negative_exempt": 0,
+          "minimum_field": 187852,
+          "minimum_sign": 1
+        },
+        "low": {
+          "checked": 261386,
+          "exempt": 758,
+          "negative_exempt": 758,
+          "minimum_field": 11764,
+          "minimum_sign": 1
+        }
+      },
+      "seconds": 38.2855,
+      "peak_rss_bytes": 155746304,
+      "log_sha256": "c2c0fc7947e9e54344822c6049c654797fc697a6c6800a870902c4430b398614"
+    },
+    {
+      "source_class": 105,
+      "bounds": {
+        "upper": {
+          "checked": 262144,
+          "exempt": 0,
+          "negative_exempt": 0,
+          "minimum_field": 52684,
+          "minimum_sign": 1
+        },
+        "low": {
+          "checked": 262030,
+          "exempt": 114,
+          "negative_exempt": 114,
+          "minimum_field": 8164,
+          "minimum_sign": 1
+        }
+      },
+      "seconds": 78.778,
+      "peak_rss_bytes": 208027648,
+      "log_sha256": "008dd354da65e0cfcd6bdf2e1ac5c0499c96c8216a1c652718fa6e2977528a4b"
+    }
+  ],
+  "upper_checked": 3670016,
+  "low_checked": 3661604,
+  "high_exempt": 8412,
+  "individual_peak_rss_bytes": 213598208,
+  "sum_class_seconds": 360.06052
+}

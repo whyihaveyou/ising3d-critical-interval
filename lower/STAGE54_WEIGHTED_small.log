@@ -1,0 +1,12 @@
+memory 8 rows 237 edges 1015
+direct physical path/motif check through 4 count 726
+Perron lower and upper, units 1e-6 4733641 4733893
+u times optimistic spectral radius >1 by at least (units 1e-9) 13687365
+memory 12 rows 46562 edges 192576
+direct physical path/motif check through 6 count 16926
+Perron lower and upper, units 1e-6 4703469 4703720
+u times optimistic spectral radius >1 by at least (units 1e-9) 7226170
+memory 14 rows 759774 edges 3122796
+direct physical path/motif check through 7 count 81390
+Perron lower and upper, units 1e-6 4694655 4694905
+u times optimistic spectral radius >1 by at least (units 1e-9) 5338693

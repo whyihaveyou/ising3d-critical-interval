@@ -1,0 +1,21 @@
+r=5441/3439 odds_lower_1e10=[502491733, 515270156, 528600632, 542501558]
+PASS 8 corner geometries, 21 actual leaves, 4 exact 8192-term sums, 256 words and 40 oriented class inequalities
+class 0 high 12 gain 5.482883332905501e-10
+class 1 high 510 gain 1.7359184014547255e-06
+class 3 high 381 gain 1.7383650071102614e-06
+class 6 high 512 gain 1.7046983349207016e-06
+class 7 high 768 gain 1.3309413726470768e-06
+class 15 high 1018 gain 1.4466331271135228e-06
+class 22 high 512 gain 1.5184393306641046e-06
+class 23 high 1022 gain 1.4286373073046437e-06
+class 24 high 1017 gain 1.9799192000909862e-06
+class 25 high 384 gain 1.136431097379216e-06
+class 27 high 1022 gain 1.0655033615019897e-06
+class 30 high 382 gain 1.262930947540807e-06
+class 60 high 758 gain 1.1950531510545263e-06
+class 105 high 114 gain 7.055528281281861e-07
+r 5441/3439 floor(1e15 m2 lower) 518597056
+source class 1 of 14 checked
+source class 7 of 14 checked
+source class 14 of 14 checked
+PASS directed 14 classes, all 3670016 fields with directed shared-bridge constraints

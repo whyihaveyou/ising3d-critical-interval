@@ -1,0 +1,12 @@
+endpoint 3775/2386 delta 3/200000000000000 left 377499999999996421/238600000000000000
+frozen odds (units 1e-10) [502492095, 515270524, 528601005, 542501939, 356890721, 5255754299]
+archive sha256 711f6a8446ecb17eea03384ab964a9dd60f0586be1401e9edd46a321c873f314
+floor(1e15 original squared-magnetization lower bound) 215386342
+floor(1e15 uniform squared-magnetization lower bound) 44732026
+PASS 24 bridge edges, 40 class odds, frozen high sets, 120 physical rows and uniform left interval
+minimum box lower endpoint minus frozen odds >= 1171/100000000000000
+individual-row log-r slope bound 4653838587522506721344811/558986770814281250000
+frozen-field log-r slope bound 2089807/250
+delta 407/10000000000000 left 18874999999514449/11930000000000000 uniform floor(1e15 lower) 348897
+delta 163/4000000000000 left 7549999999805541/4772000000000000 uniform floor(1e15 lower) 84723
+PASS uniform positive magnetization to 7549999999805541/4772000000000000 and strict critical upper bound 18874999999514449/11930000000000000

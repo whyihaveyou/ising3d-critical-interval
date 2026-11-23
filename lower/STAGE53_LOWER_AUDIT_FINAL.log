@@ -1,0 +1,9 @@
+distinct translated and oriented torus embeddings 5184 vertices 28 edges 51
+kinetic torus T4^3 paths through length 6 20706 wrapped endpoint contact 1 versus lifted 0
+r=1.545 uniform path obstruction: guaranteed gap at scale 1e12 477449869
+input coupling 30829/20000 panels 64 charge classes 20
+labelled endpoint neighbourhoods 1024 physical symmetry orbits 123
+independent plane transfers 15744 tested edge constraints 1637 minimum charge slack at scale 1e12 24
+six-direction site configurations 240 gain at scale 1e12 8362020128
+endpoint debit at most 50172121056 at scale 1e12; net gain 254281879/31250000000
+frozen endpoint r 1051047402734946162883735364514439/681844442968178837116264635485561 decimal floor at 1e15 1541476818612126

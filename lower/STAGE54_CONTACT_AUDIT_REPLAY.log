@@ -1,0 +1,3 @@
+bulk exact rational weight 10000/9991 states 12994574 labels 53221763 inequalities 53221758 ceiling 473271745/100000000 maximum vector component 1403925536
+sparse exact rational weight 4/5 states 12994574 labels 53221763 inequalities 53221758 ceiling 456604381/100000000 maximum vector component 1412917105
+dense exact rational weight 6/5 states 12994574 labels 53221763 inequalities 53221758 ceiling 492941352/100000000 maximum vector component 1458290438

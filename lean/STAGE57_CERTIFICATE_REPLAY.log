@@ -1,0 +1,15 @@
+source sha256 d7015b207720b6339a6154e018e269a10b7a59d2fa0dc0db475ff1a9bbb6a77d
+$ elan run leanprover/lean4:v4.33.1 lean --version
+Lean (version 4.33.1, arm64-apple-darwin24.6.0, commit 819816b2e0a3bf405af45ae5c7af2491d8f5bee6, Release)
+exit 0
+$ elan run leanprover/lean4:v4.33.1 lean -DwarningAsError=true -o STAGE57CertificateInterface.olean STAGE57CertificateInterface.lean
+'IsingStage57.intervalCheck_sound' does not depend on any axioms
+'IsingStage57.rowsCheck_sound' depends on axioms: [propext]
+'IsingStage57.totalCheck_sound' does not depend on any axioms
+'IsingStage57.certificateCheck_sound' depends on axioms: [propext]
+'IsingStage57.stage57_certificate_sound' depends on axioms: [propext]
+'IsingStage57.stage57_published_integer_interface' depends on axioms: [propext]
+exit 0
+$ elan run leanprover/lean4:v4.33.1 leanchecker -v STAGE57CertificateInterface
+replaying STAGE57CertificateInterface
+exit 0

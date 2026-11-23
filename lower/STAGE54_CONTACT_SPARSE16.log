@@ -1,0 +1,5 @@
+memory 16 states 12994574 labels 53221763 contact 4/5 upper-power-unit 100000000
+iteration 14 highest certified row 572768694/125237521 ceil x1e8 457345922 maximizer 0
+iteration 20 highest certified row 1876714798/411009531 ceil x1e8 456611017 maximizer 0
+iteration 26 highest certified row 260645632/57083425 ceil x1e8 456604754 maximizer 11043942
+iteration 32 highest certified row 4909594005/1075240232 ceil x1e8 456604381 maximizer 1

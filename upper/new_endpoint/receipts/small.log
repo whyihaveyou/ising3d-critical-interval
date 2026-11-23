@@ -1,0 +1,22 @@
+PASS 3 bits, 2 classes, 96 signed native entries against direct sums and the original raw kernel
+PASS 5 bits, 2 classes, 512 signed native entries against direct sums and the original raw kernel
+PASS 8 bits, 2 classes, 4096 signed native entries against direct sums and the original raw kernel
+PASS 4704 reduced-tensor comparisons and six production-mode rejections
+        9.39 real         1.50 user         0.96 sys
+            96829440  maximum resident set size
+                   0  average shared memory size
+                   0  average unshared data size
+                   0  average unshared stack size
+               33069  page reclaims
+                2696  page faults
+                   0  swaps
+                   0  block input operations
+                   0  block output operations
+                   0  messages sent
+                   0  messages received
+                   0  signals received
+                1333  voluntary context switches
+               16727  involuntary context switches
+          6892013509  instructions retired
+          4471626181  cycles elapsed
+            68321784  peak memory footprint

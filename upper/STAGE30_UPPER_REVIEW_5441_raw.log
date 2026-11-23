@@ -1,0 +1,7 @@
+r=5441/3439 odds_lower_1e10=[502491733, 515270156, 528600632, 542501558]
+PASS 8 corner geometries, 21 actual leaves, 4 exact 8192-term sums, 256 words and 40 oriented class inequalities
+r 5441/3439 floor(1e15 m2 lower) 518597056
+source class 1 of 14 checked
+source class 7 of 14 checked
+source class 14 of 14 checked
+PASS raw 14 classes, all 3670016 fields with directed shared-bridge constraints

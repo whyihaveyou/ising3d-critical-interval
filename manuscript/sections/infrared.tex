@@ -1,0 +1,159 @@
+% ======================================================================
+\section{An infrared bound that retains the zero mode}\label{sec:infrared}
+% ======================================================================
+
+In \cref{sec:infrared,sec:ordered}, $L\ge4$ is even and all expectations are taken in the zero-field periodic measure $\avg\cdot_L=\avg\cdot_{L,K,0}$. Put
+\[
+ G_L(x)=\avg{\sigma_0\sigma_x}_L,\qquad \widehat G_L(k)=\sum_{x\in\T_L}e^{ik\cdot x}G_L(x),\qquad
+ g_L=G_L(e_1),\qquad \lambda(k)=2\sum_{j=1}^3(1-\cos k_j),
+\]
+for $k\in\T_L^*=(2\pi/L)\{0,\dots,L-1\}^3$. Positive definiteness of $G_L$ gives $\widehat G_L(k)\ge0$, and $\widehat G_L(0)=Vq_L$. Inverting the Fourier transform,
+\begin{equation}\label{eq:sumrule}
+ 1=G_L(0)=q_L+\frac1V\sum_{k\ne0}\widehat G_L(k).
+\end{equation}
+We also write $c_0=u^{-1}+u=2(r^2+1)/(r^2-1)$.
+
+\subsection{The bound for nonzero modes}
+
+\begin{proposition}[Infrared bound]\label{prop:infrared}
+For every real function $h$ on $\T_L$,
+\begin{equation}\label{eq:varbound}
+ \Bigl\langle\Bigl(\sum_x\sigma_x(-\Delta h)_x\Bigr)^2\Bigr\rangle_L\le(c_0-2g_L)\sum_{\{x,y\}\in E_L}(h_x-h_y)^2,
+\end{equation}
+where $(-\Delta h)_x=\sum_{y\sim x}(h_x-h_y)$. Consequently
+\begin{equation}\label{eq:IR}
+ \lambda(k)\,\widehat G_L(k)\le c_0-2g_L\qquad(k\in\T^*_L\setminus\{0\}).
+\end{equation}
+\end{proposition}
+
+Since $g_L\ge u$ by \cref{lem:factor} and \cref{lem:standard}(i), the coefficient satisfies $c_0-2g_L\le u^{-1}-u=2/\sinh(2K)<1/K$. Thus~\eqref{eq:IR} is a strengthening of the Gaussian-domination bound $\lambda\widehat G_L\le1/K$ of~\cite{FSS76}. The improvement comes from a representation of the Ising weight by inner products of planar unit vectors, for which a rotation of the vectors is a symmetry.
+
+Let $0<\alpha<\pi/4$ satisfy $\cos(2\alpha)=e^{-2K}$, and for $\sigma=\pm1$ put $n_\sigma=(\cos\alpha,\sigma\sin\alpha)\in\R^2$. Then $n_\sigma\cdot n_{\sigma'}=1$ if $\sigma=\sigma'$ and $\cos2\alpha=e^{-2K}$ otherwise, i.e.\
+\[
+ e^{K\sigma\sigma'}=e^K\,n_\sigma\cdot n_{\sigma'} .
+\]
+Let $R(\phi)$ denote rotation by the angle $\phi$. For an angle field $a\in\R^{\T_L}$ define
+\[
+ Z(a)=\sum_\sigma\prod_{\{x,y\}\in E_L}R(a_x)n_{\sigma_x}\cdot R(a_y)n_{\sigma_y}
+ =\sum_\sigma\prod_{\{x,y\}\in E_L}\cos\bigl(\alpha(\sigma_x-\sigma_y)+a_x-a_y\bigr).
+\]
+Then $Z(a)$ is real, $Z(0)=e^{-3VK}Z_L(K,0)>0$, and $Z(a)=Z(0)$ whenever $a$ is constant.
+
+\begin{lemma}\label{lem:rotation}
+$|Z(a)|\le Z(0)$ for every $a\in\R^{\T_L}$.
+\end{lemma}
+
+\begin{proof}
+Fix a finite set $\mathcal A\subset\R$ containing the values of $a$, and consider all fields with values in $\mathcal A$. Let $\mathfrak M$ be the maximum of $|Z|$ over these fields, so $\mathfrak M\ge Z(0)>0$. Among the maximizers choose one, $a$, with the smallest number $N(a)$ of \emph{disagreeing} bonds, i.e.\ bonds with $a_x\ne a_y$.
+
+Suppose $N(a)>0$, and let $b$ be a disagreeing bond, say in direction $e_1$. Consider the reflection $\vartheta$ of $\T_L$ in the pair of planes orthogonal to $e_1$ that bisect $b$ and the bond $L/2$ steps away. Since $L$ is even, these planes cut $\T_L$ into two halves $\T^\ell,\T^r$ exchanged by $\vartheta$. Write each crossing bond factor as $\sum_{c=1}^2(R(a_x)n_{\sigma_x})_c(R(a_y)n_{\sigma_y})_c$. Summing over the spins of each half gives
+\[
+ Z(a)=\sum_{\mathbf c}\Xi_{\mathbf c}(a|_{\T^\ell})\,\Xi_{\mathbf c}(\vartheta^*a|_{\T^r}),
+\]
+where $\mathbf c$ ranges over the component indices of the $2L^2$ crossing bonds and $\Xi_{\mathbf c}$ is a real tensor depending only on the field on one half. By Cauchy--Schwarz,
+\[
+ Z(a)^2\le Z(a^{\ell\ell})\,Z(a^{rr}),
+\]
+where $a^{\ell\ell}$ equals $a$ on $\T^\ell$ and $a\circ\vartheta$ on $\T^r$, and $a^{rr}$ is defined symmetrically. Both factors are nonnegative and at most $\mathfrak M$. Since $Z(a)^2=\mathfrak M^2$, both $a^{\ell\ell}$ and $a^{rr}$ are maximizers. In a reflected field every crossing bond agrees, and the bonds inside each half are duplicated. Hence $N(a^{\ell\ell})+N(a^{rr})=2(N(a)-N_\times(a))\le2N(a)-2$, where $N_\times(a)\ge1$ counts the disagreeing crossing bonds. This contradicts the minimality of $N(a)$. Therefore $N(a)=0$, $a$ is constant, and $\mathfrak M=Z(0)$.
+\end{proof}
+
+\begin{proof}[Proof of \cref{prop:infrared}]
+For a real function $h$ and $\epsilon\in\R$ consider $\psi(\epsilon)=\log Z(\epsilon h)$. Near $\epsilon=0$ every bond factor is positive. By \cref{lem:rotation}, $\psi$ has a maximum at $\epsilon=0$, so $\psi''(0)\le0$. Write $\delta_{xy}=h_x-h_y$ and $\beta_{xy}=\log\cos(\alpha(\sigma_x-\sigma_y)+\epsilon\delta_{xy})$. At $\epsilon=0$ the normalized weight $\prod\cos(\alpha(\sigma_x-\sigma_y))/Z(0)$ is the Ising measure, so
+\[
+ \psi''(0)=\mathrm{Var}_L\Bigl(\sum_{\{x,y\}}\partial_\epsilon\beta_{xy}\Bigr)+\Bigl\langle\sum_{\{x,y\}}\partial^2_\epsilon\beta_{xy}\Bigr\rangle_L .
+\]
+If $\sigma_x=\sigma_y$, then $\partial_\epsilon\beta_{xy}=0$ and $\partial_\epsilon^2\beta_{xy}=-\delta_{xy}^2$. If $\sigma_x\ne\sigma_y$, then $\partial_\epsilon\beta_{xy}=-\frac12\tan(2\alpha)(\sigma_x-\sigma_y)\delta_{xy}$ and $\partial_\epsilon^2\beta_{xy}=-\sec^2(2\alpha)\delta_{xy}^2$. The first formula covers both cases. Since $\Prob(\sigma_x\ne\sigma_y)=(1-g_L)/2$ for neighbours and $\tan^2(2\alpha)=\sec^2(2\alpha)-1=e^{4K}-1$, the mean of $\partial^2_\epsilon\beta_{xy}$ is $-[1+(e^{4K}-1)(1-g_L)/2]\delta_{xy}^2$. Moreover $\sum_{\{x,y\}}(\sigma_x-\sigma_y)\delta_{xy}=\sum_x\sigma_x(-\Delta h)_x$, which has mean zero. Hence $\psi''(0)\le0$ reads
+\[
+ \frac{e^{4K}-1}4\Bigl\langle\Bigl(\sum_x\sigma_x(-\Delta h)_x\Bigr)^2\Bigr\rangle_L\le\Bigl[1+\frac{(e^{4K}-1)(1-g_L)}2\Bigr]\sum_{\{x,y\}}\delta_{xy}^2 .
+\]
+Dividing by $(e^{4K}-1)/4$ gives~\eqref{eq:varbound} with coefficient $4/(r^2-1)+2(1-g_L)=c_0-2g_L$.
+
+For $k\ne0$ apply~\eqref{eq:varbound} to $h_x=\cos(k\cdot x)$ and $h_x=\sin(k\cdot x)$. In both cases $-\Delta h=\lambda(k)h$ and $\sum_{\{x,y\}}\delta_{xy}^2=\sum_xh_x(-\Delta h)_x=\lambda(k)\sum_xh_x^2$. Adding the two inequalities and using translation invariance,
+\[
+ \lambda(k)^2\,V\widehat G_L(k)\le(c_0-2g_L)\,\lambda(k)\,V .
+\]
+Since $\lambda(k)>0$, this is~\eqref{eq:IR}.
+\end{proof}
+
+The sum rule~\eqref{eq:sumrule} and~\eqref{eq:IR} already give an ordered phase. Let $\mathsf W=\int_{[-\pi,\pi]^3}(1-\frac13\sum_j\cos k_j)^{-1}\frac{\dd^3k}{(2\pi)^3}=1.516386\ldots$ be Watson's integral~\cite{Wat39}, so that $J_0:=\int\lambda^{-1}\frac{\dd^3k}{(2\pi)^3}=\mathsf W/6$.
+
+\begin{corollary}[Single-site bound]\label{cor:singlesite}
+If $r^2>1+\mathsf W$, then $m_+(K)^2\ge1-\mathsf W/(r^2-1)>0$. Hence $e^{2K_c}\le\sqrt{1+\mathsf W}<1.58632$.
+\end{corollary}
+
+\begin{proof}
+Summing~\eqref{eq:IR} over $k\ne0$ and dividing by $V$ gives
+\[
+ 6(1-g_L)=\frac1V\sum_k\lambda(k)\widehat G_L(k)\le c_0-2g_L,
+\]
+where the identity is $\sum_x G_L(x)\,[(-\Delta)\one_{\{0\}}](x)=6G_L(0)-6g_L$. Thus $g_L\ge(6-c_0)/4$ and $c_0-2g_L\le\frac32(c_0-2)=6/(r^2-1)$. Inserting~\eqref{eq:IR} in~\eqref{eq:sumrule} gives $q_L\ge1-\frac6{r^2-1}V^{-1}\sum_{k\ne0}\lambda(k)^{-1}$. By \cref{lem:riemann} below with $P\equiv1$, the Riemann sum converges to $J_0=\mathsf W/6$. Hence every limit point $q$ of $q_L$ satisfies $q\ge1-\mathsf W/(r^2-1)$. Conclude with \cref{prop:order,cor:monotone}(ii).
+\end{proof}
+
+To improve on \cref{cor:singlesite} we use~\eqref{eq:IR} with test functions other than $\one$, and we keep the zero mode $q$ as an unknown, to be bounded from below using further information on local correlations.
+
+\subsection{Spectral rows}
+
+Write $X,Y,Z$ for $\cos k_1,\cos k_2,\cos k_3$ and put
+\[
+ \Sigma_1=X+Y+Z,\qquad \Sigma_2=X^2+Y^2+Z^2,\qquad \Sigma_{11}=XY+YZ+ZX .
+\]
+For each row $i$ of \cref{tab:spectral}, let $P_i$ be the average of $F_if_i^2$ over the six permutations of $(X,Y,Z)$, divided by the $\ell^1$-norm $\|\cdot\|$ of its coefficient vector in the basis of permutation-averaged monomials. The five norms, in the order of \cref{tab:spectral}, are $63936016$, $70605774$, $59587922$, $64763232$ and $49871844$. Each $F_i$ is nonnegative on $[-1,1]^3$, hence so is $P_i$. Each $P_i$ is a polynomial of degree at most four, symmetric under permutations of the coordinates. Write $P_i(\one)=P_i(1,1,1)$ and define
+\[
+ J_i=\int_{[-\pi,\pi]^3}\frac{P_i(\cos k)}{\lambda(k)}\,\frac{\dd^3k}{(2\pi)^3},\qquad
+ X_{i,L}=\frac1V\sum_{k\in\T_L^*}P_i(\cos k)\,\widehat G_L(k).
+\]
+Expanding $P_i(\cos k)=\sum_x\widehat P_i(x)e^{ik\cdot x}$ in harmonics, with $\widehat P_i$ supported on $\|x\|_1\le4$, gives $X_{i,L}=\sum_x\widehat P_i(x)G_L(x)$ for $L\ge10$. This is the mean of the local spin function $\sum_x\widehat P_i(x)\sigma_0\sigma_x$.
+
+\begin{table}[t]
+\centering\small
+\caption{Spectral test polynomials and the upper ends of the rational enclosures of the Green integrals $J_i$. The lower ends are one unit smaller in the last digit.}\label{tab:spectral}
+\begin{tabular}{rlll}
+\toprule
+$i$ & $F_i$ & $f_i$ & $J_i^+\cdot10^{18}$ \\
+\midrule
+29 & $(1+X)(1+Y)$ & $2126-119(X+Y)+2110Z$ & $80969192552320727$\\
+32 & $1$ & $-1653-613\Sigma_1+609\Sigma_2+1159\Sigma_{11}$ & $6860377629124312$\\
+33 & $(1-X)(1-Y)$ & $1722+1417(X+Y)+1421Z$ & $6673088821306827$\\
+35 & $(1+X)(1-Y)$ & $1772+1322X+1479Y+1387Z$ & $24027497160169481$\\
+69 & $(1+X)(1+Y)$ & $2090-330(X+Y)+2101Z$ & $83985141451046847$\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The indices $i$ are those of the archived row list and carry no further meaning.
+
+\begin{lemma}[Riemann sums]\label{lem:riemann}
+Let $P$ be a trigonometric polynomial. Then
+\[
+ \lim_{L\to\infty}\frac1V\sum_{k\in\T_L^*\setminus\{0\}}\frac{P(k)}{\lambda(k)}=\int_{[-\pi,\pi]^3}\frac{P(k)}{\lambda(k)}\,\frac{\dd^3k}{(2\pi)^3}.
+\]
+\end{lemma}
+
+\begin{proof}
+Represent $k=2\pi j/L$ with $j\in\{-L/2+1,\dots,L/2\}^3$. The shell $\|j\|_\infty=m\ge1$ contains at most $(2m+1)^3-(2m-1)^3=24m^2+2$ points. On it $\lambda(k)\ge16m^2/L^2$, because $1-\cos x\ge2x^2/\pi^2$ for $|x|\le\pi$. Hence for $0<\delta<1$ the modes with $0<\|k\|_\infty<\delta$ contribute at most
+\[
+ \frac{\|P\|_\infty}{L^3}\sum_{1\le m\le\delta L/2\pi}(24m^2+2)\frac{L^2}{16m^2}\le C\|P\|_\infty\Bigl(\delta+\frac1L\Bigr).
+\]
+The integral over $\{\|k\|_\infty<\delta\}$ is $O(\delta)$, since $\lambda(k)^{-1}=O(|k|^{-2})$ is integrable in three dimensions. On $\{\|k\|_\infty\ge\delta\}$ the integrand is continuous, and the Riemann sums converge. Let $L\to\infty$ and then $\delta\downarrow0$.
+\end{proof}
+
+\begin{lemma}[Spectral rows]\label{lem:spectral}
+Let $L_k\to\infty$ be even integers along which $q_{L_k}\to q$, $g_{L_k}\to g$ and $X_{i,L_k}\to X_i$ for the five indices $i$. Then
+\begin{equation}\label{eq:spectralrow}
+ X_i\le P_i(\one)\,q+(c_0-2g)\,J_i\le P_i(\one)\,q+(c_0-2g)\,J_i^+ .
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+Separate the term $k=0$ in $X_{i,L}$. It equals $P_i(\one)q_L$. For $k\ne0$ use $P_i\ge0$ and~\eqref{eq:IR}:
+\[
+ X_{i,L}\le P_i(\one)q_L+(c_0-2g_L)\,\frac1V\sum_{k\ne0}\frac{P_i(\cos k)}{\lambda(k)} .
+\]
+Pass to the limit along $L_k$ with \cref{lem:riemann}. The second inequality in~\eqref{eq:spectralrow} uses $J_i\le J_i^+$ (\cref{cert:green}) and $c_0-2g\ge c_0-2>0$.
+\end{proof}
+
+\begin{certificate}[Green integrals]\label{cert:green}
+For the five polynomials of \cref{tab:spectral}, $J_i^+-10^{-18}\le J_i\le J_i^+$, where $10^{18}J_i^+$ is the integer in the last column.
+\end{certificate}
+
+The enclosures are obtained from the exact evaluation of the cubic lattice Green function by Glasser and Boersma~\cite{GB00}. See Appendix~\ref{app:green}.

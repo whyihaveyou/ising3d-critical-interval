@@ -1,0 +1,115 @@
+% ======================================================================
+\section{Verification of the certificates}\label{app:verification}
+% ======================================================================
+
+All programs, input data and output logs are available at \repo. Paths below are relative to the root of that repository, whose directories \nolinkurl{lower/}, \nolinkurl{upper/} and \nolinkurl{lean/} contain the material for \cref{sec:paths,sec:counting,sec:lower}, for \cref{sec:infrared,sec:ordered}, and the Lean modules. The programs require Python~3 with its standard library and a C++17 compiler. The full ordered-side field traversal also uses NumPy, SciPy and GMP.
+
+\subsection{Programs and independent checks}
+
+\Cref{tab:programs} lists, for each certificate, the program that produces it and the independent check. Two checks count as independent if they use different arithmetic or different enumerations. Inputs that are \emph{shared} between two checks are listed explicitly. Their derivation is part of the mathematics in the main text.
+
+\begin{table}[ht]
+\centering\footnotesize
+\caption{Certificates, programs and independent checks.}\label{tab:programs}
+\renewcommand{\arraystretch}{1.15}
+\begin{tabular}{>{\raggedright}p{2.2cm}>{\raggedright}p{5.2cm}>{\raggedright\arraybackslash}p{5.6cm}}
+\toprule
+Certificate & Primary computation & Independent check\\
+\midrule
+\Cref{cert:prism} (prism integrals) &
+\nolinkurl{lower/STAGE53_DISORDER_prism.py} ($u_*$), \nolinkurl{lower/STAGE54_WEIGHTED_shapes.py} ($u_2$). Spin sums by layer transfer over the two hub squares, integer common denominator. &
+\nolinkurl{lower/STAGE53_LOWER_AUDIT_verify.py} (coordinate spin transfer) and \nolinkurl{lower/STAGE53_PRISM_CHECK.py} (enumeration of all $2^{23}$ even and $2^{23}$ two-source bond sets via the cycle space). All $136$ stored integral rows agree at both panel ends at all test couplings.\tabularnewline
+\Cref{cert:allocation} (allocations) &
+Same programs. They enumerate all labelled neighbourhoods, roles and shapes. &
+Separate coordinate replay of $6400$ labelled path rows, $676$ chord rows and $240$ vertex stars at $u_2$. Lean: all $1637$ rows and $240$ vertex stars of part (a), \nolinkurl{STAGE54Prism.lean}.\tabularnewline
+\Cref{cert:transfer} (transfer bounds) &
+\nolinkurl{lower/STAGE54_CONTACT_robust.cpp} (a) and \nolinkurl{lower/STAGE54_WEIGHTED_transfer.cpp} (b). The automaton is built by \nolinkurl{lower/verify_saw16_direct_straight_20261121.cpp}. &
+(a) \nolinkurl{lower/STAGE54_CONTACT_AUDIT.cpp} rechecks all rows with exact unrounded powers and all possible successor counts. (b) Reconstruction of every transition and its shape mark from coordinates, and comparison with all $81\,390$ seven-step lattice paths. The row inequality of (b) itself is checked by the primary program only.\tabularnewline
+\Cref{lem:rosenbluth} &
+Proof in text. &
+Lean, \nolinkurl{STAGE54Torus.lean} and \nolinkurl{STAGE54Kinetic.lean}, for $(\Z/L\Z)^3$, $L\ge3$.\tabularnewline
+\Cref{cert:endpoint-lower} &
+\nolinkurl{lower/verify_stage54_weighted_prism.py}. &
+\nolinkurl{manuscript/check_numbers.py} accompanying this manuscript.\tabularnewline
+\Cref{cert:green} (Green integrals) &
+\nolinkurl{upper/STAGE23_HOLDBACK_GREEN.py}. &
+\nolinkurl{upper/check_physical_inputs.py}.\tabularnewline
+\Cref{cert:multipliers} (rows, multipliers) &
+Row generator \nolinkurl{upper/STAGE28_ORDERED_ENDPOINT_precise.py}, multipliers \nolinkurl{upper/STAGE21_ORDERED_780_493.json}. &
+Hash-checked rebuild, \nolinkurl{upper/new_endpoint/prepare.py}.\tabularnewline
+\Cref{cert:fields} (field caps) &
+Directed integer traversal, \nolinkurl{upper/new_endpoint/replay.py}, mode \texttt{directed}. &
+Unreduced integer traversal in disjoint blocks, \nolinkurl{replay.py}, mode \texttt{raw}, with \nolinkurl{blocked_raw.cpp}. It also checks the $3\,661\,604$ complementary caps. A further $56$ exact comparisons on sampled fields use the direct Hamming kernel, \nolinkurl{crosscheck.py}.\tabularnewline
+\Cref{cert:interval} (interval) &
+\nolinkurl{upper/new_endpoint/margin.py}. &
+\nolinkurl{upper/verify_stage33_upper_margin.py} (row and weight derivative bounds) and \nolinkurl{manuscript/check_numbers.py} (final comparison).\tabularnewline
+\bottomrule
+\end{tabular}
+\end{table}
+
+The two ordered-side traversals share the physical row generator, the lattice and shell geometry, the Green inputs of \cref{cert:green}, the multipliers and the bridge assignment. Their agreement therefore checks the field arithmetic and enumeration, while the shared inputs are covered by the arguments of \cref{sec:infrared,sec:ordered}. On the disordered side, the contact audit uses the same labelled direction graph as the primary computation. It performs $53\,221\,758$ exact row comparisons.
+
+\subsection{Rounding}
+
+All rounding is directed. Lower bounds for integrals, gains and odds constants are rounded down. Upper bounds for powers $w^j$, shape weights $\overline\Omega_\tau$, transfer row quotients, Green integrals and field caps are rounded up. Row inequalities $(\cT v)(s)\le\Lambda v(s)$ for integer vectors are decided by exact cross-multiplication. The power iteration that produced $v$ is not part of the certificate.
+
+\subsection{Lean}\label{app:lean}
+
+The Lean~4 files listed below were compiled with warnings treated as errors and rechecked with \texttt{leanchecker}. Their axioms are the standard \texttt{propext}, \texttt{Quot.sound} and \texttt{Classical.choice}.
+\begin{itemize}
+\item \nolinkurl{STAGE54Torus.lean}, \nolinkurl{STAGE54Kinetic.lean}: the bound of \cref{lem:rosenbluth} on the actual periodic graph $(\Z/L\Z)^3$ for every $L\ge3$, stated with cleared denominators as $\sum_P5^{c(P)}4^{5n-c(P)}\le6\cdot5^5(5\cdot4^5)^{n-1}$. The identity $c(P)=\sum_ia_i$ of \cref{lem:contacts} is proved along the way.
+\item \nolinkurl{STAGE54Prism.lean}, \nolinkurl{STAGE54PrismData.lean}: the $1637$ edge rows and $240$ vertex rows of \cref{cert:allocation}(a) from the frozen integer table of prism integrals.
+\item \nolinkurl{STAGE57CertificateInterface.lean}:\\ positivity of denominators, exact cross-multiplications, finite row equalities and finite list totals used in the endpoint arithmetic.
+\end{itemize}
+These modules take the frozen tables as input. The completeness of the enumerations and the thermodynamic arguments are proved in the text.
+
+\subsection{Arithmetic of the statement}\label{app:arith}
+
+The following exact comparisons are checked by \nolinkurl{manuscript/check_numbers.py}:
+\[
+ r_-\in(1.541630483120638,\,1.541630483120639),\qquad
+\]
+\[
+ r_+\in(1.582145850755611,\,1.582145850755612),
+\] the bounds~\eqref{eq:mainK} on $K_c=\frac12\log r_c$ using rational enclosures of the logarithm, $r_+=r_b-407\cdot10^{-13}$ and $r_b-d_1<r_+$. The script also re-derives every relation between the constants quoted in the text. Examples are $u_2=677/3177$, $\bar\gamma_2=\gamma_2-\theta_2/4$, \cref{cert:endpoint-lower}, $\overline\Omega_\tau$ from $w_\tau$, $C_*=2089807/250$, and the vertex rows (A3) for both allocations from \cref{tab:charges1,tab:charges2}.
+
+\subsection{Reproduction}
+
+From the repository root:
+\begin{verbatim}
+cd lower
+python3 -B STAGE53_DISORDER_prism.py
+python3 -B STAGE53_LOWER_AUDIT_verify.py --final-only
+python3 -B STAGE53_PRISM_CHECK.py --cross-check
+c++ -O3 -std=c++17 STAGE54_CONTACT_robust.cpp -o walk_check
+./walk_check 16 40 10000 9991
+c++ -O3 -std=c++17 STAGE54_CONTACT_AUDIT.cpp -o walk_audit
+./walk_audit bulk
+python3 -B STAGE54_CONTACT_verify.py
+c++ -O3 -std=c++17 STAGE54_WEIGHTED_transfer.cpp -o shape_check
+./shape_check 16 28
+python3 -B STAGE54_WEIGHTED_shapes.py
+python3 -B verify_stage54_weighted_prism.py
+\end{verbatim}
+for the ordered side
+\begin{verbatim}
+cd upper/new_endpoint
+python3 -B replay.py arithmetic
+python3 -B replay.py directed
+python3 -B replay.py raw
+\end{verbatim}
+and for the Lean modules and the scalar arithmetic
+\begin{verbatim}
+python3 -B lean/STAGE54_kinetic_replay.py
+python3 -B lean/STAGE57_certificate_replay.py
+python3 -B manuscript/check_numbers.py
+\end{verbatim}
+The \texttt{arithmetic} mode reconstructs the odds, class caps and interval margin from stored integer outputs. The other two modes regenerate all field comparisons.
+
+% ======================================================================
+\section{The Green-function enclosures}\label{app:green}
+% ======================================================================
+
+Let $\Gamma(x)=\int_{[-\pi,\pi]^3}e^{ik\cdot x}\lambda(k)^{-1}\frac{\dd^3k}{(2\pi)^3}$. Expanding $P_i(\cos k)=\sum_x\widehat P_i(x)e^{ik\cdot x}$, with rational coefficients supported on $\|x\|_1\le4$, gives the finite identity $J_i=\sum_x\widehat P_i(x)\Gamma(x)$. By cubic symmetry only eleven distinct values $\Gamma(x)$ occur. Glasser and Boersma~\cite[Table~1]{GB00} express the lattice Green function $g(x)=\int e^{ik\cdot x}(3-\sum_j\cos k_j)^{-1}\frac{\dd^3k}{(2\pi)^3}$ at these displacements as rational linear combinations of $1$, $g_0=g(0)$ and $1/(\pi^2g_0)$. Since $\lambda=2(3-\sum_j\cos k_j)$, $\Gamma=g/2$. Hence each $J_i$ is $\alpha_i+\beta_ig_0+\gamma_i/(\pi^2g_0)$ with explicit rationals $\alpha_i,\beta_i,\gamma_i$.
+
+The constant $g_0=\mathsf W/3$ is enclosed via its expression through complete elliptic integrals~\cite{Wat39,GB00}. The square roots that appear are bounded by integer squares. The elliptic series is summed exactly up to the term of index $17$, and its positive tail is bounded by the geometric majorant $k_-^{36}/(1-k_-^2)$. The number $\pi$ is enclosed by Machin's formula with alternating arctangent bounds. Propagating these enclosures with interval arithmetic in exact rationals gives \cref{tab:spectral}.

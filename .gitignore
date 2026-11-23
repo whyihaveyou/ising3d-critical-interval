@@ -1,0 +1,17 @@
+__pycache__/
+*.pyc
+.DS_Store
+*.olean
+*.ilean
+walk_check
+walk_audit
+shape_check
+*.o
+manuscript/*.aux
+manuscript/*.log
+manuscript/*.out
+manuscript/*.toc
+manuscript/*.fls
+manuscript/*.fdb_latexmk
+manuscript/*.synctex.gz
+manuscript/main.pdf

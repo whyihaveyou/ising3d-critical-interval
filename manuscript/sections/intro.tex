@@ -1,0 +1,105 @@
+% ======================================================================
+\section{Introduction}\label{sec:intro}
+% ======================================================================
+
+\subsection{The model and the main result}
+
+Let $\Lambda\subset\Z^3$ be finite and let $E(\Lambda)$ denote the set of unoriented nearest-neighbour bonds $\{x,y\}$ with $x,y\in\Lambda$, each bond counted once. For a dimensionless coupling $K=J/(k_{\mathrm B}T)>0$, a dimensionless magnetic field $h\in\R$ and a boundary condition $\eta\in\{-1,+1\}^{\Z^3}$, the Ising Gibbs measure on $\{-1,+1\}^\Lambda$ is
+\begin{equation}\label{eq:gibbs}
+ \mu^{\eta}_{\Lambda,K,h}(\sigma)=\frac{1}{Z^\eta_{\Lambda}(K,h)}
+ \exp\Big(K\!\!\sum_{\{x,y\}\in E(\Lambda)}\!\!\sigma_x\sigma_y
+ +K\!\!\sum_{\substack{x\in\Lambda,\ y\notin\Lambda\\ |x-y|=1}}\!\!\sigma_x\eta_y
+ +h\sum_{x\in\Lambda}\sigma_x\Big).
+\end{equation}
+We write $\avg{\,\cdot\,}^+_{\Lambda,K,h}$ for the expectation with the plus boundary condition $\eta\equiv+1$ and $B_R=\{-R,\dots,R\}^3$. The plus-state spontaneous magnetization and the critical coupling are
+\begin{equation}\label{eq:Kc}
+ m_+(K)=\lim_{R\to\infty}\avg{\sigma_0}^+_{B_R,K,0},\qquad
+ K_c=\inf\{K>0:\ m_+(K)>0\}.
+\end{equation}
+The limit exists and $m_+$ is nondecreasing in $K$ by the Griffiths inequalities (\cref{sec:prelim}). Throughout we use the two parametrizations
+\begin{equation}\label{eq:ru}
+ r=e^{2K},\qquad u=\tanh K=\frac{r-1}{r+1},
+\end{equation}
+and we write $r_c=e^{2K_c}$.
+
+\begin{theorem}[Critical interval]\label{thm:main}
+For the nearest-neighbour Ising ferromagnet on $\Z^3$,
+\begin{equation}\label{eq:main}
+ r_-<e^{2K_c}<r_+,\qquad\text{where}\quad
+ \begin{aligned}
+ r_-&=\rlowfrac,\\[2pt]
+ r_+&=\rupfrac .
+ \end{aligned}
+\end{equation}
+In decimal form, $1.541630483120638<r_-$ and $r_+<1.582145850755612$, and
+\begin{equation}\label{eq:mainK}
+ 0.2164203058063<K_c<0.2293910294998 .
+\end{equation}
+\end{theorem}
+
+\input{figures/fig_interval}
+
+The width of the interval is $r_+-r_-=0.04051536763497\ldots$, about $2.6\%$ of its midpoint. The Monte Carlo estimate $K_c=0.221654626(5)$ of Ferrenberg, Xu and Landau~\cite{FXL18}, i.e.\ $r_c\approx1.557854$, lies inside it.
+
+The two inequalities in~\eqref{eq:main} are proved by different arguments, one in each phase. For the lower bound we show (\cref{thm:lower}) that on a right neighbourhood of $r_-$ the zero-field susceptibility of every sufficiently large even periodic box is bounded uniformly in the box, which forces $m_+=0$. For the upper bound we show (\cref{thm:upper}) that on an explicit interval of length $4.075\cdot10^{-11}$ containing $r_+$ the squared magnetization density of large periodic boxes has a strictly positive lower limit, which forces $m_+>0$. By the sharpness of the phase transition~\cite{ABF87,DCT16}, the interval~\eqref{eq:main} therefore also encloses the threshold between finite and infinite susceptibility.
+
+\subsection{Background}
+
+The simple-cubic Ising model has resisted exact solution, and its critical coupling is known to high precision from numerical work; see~\cite{FXL18} and the references therein. Rigorous two-sided bounds go back to the beginnings of the subject.
+
+\emph{Lower bounds on $K_c$.} Fisher~\cite{Fis67} bounded the two-point function by a sum over self-avoiding walks, $\avg{\sigma_x\sigma_y}\le\sum_{\omega:x\to y}u^{|\omega|}$. Consequently $u_c=\tanh K_c\ge1/\mu$, where $\mu$ is the connective constant of $\Z^3$. With the rigorous upper bound $\mu\le4.7387$ of P\"onitz and Tittmann~\cite{PT00}, this gives $r_c\ge(\mu+1)/(\mu-1)>1.5349$, i.e.\ $K_c>0.2142$.
+
+\emph{Upper bounds on $K_c$.} Peierls-type contour arguments~\cite{Pei36,Gri64,WGF67} give an ordered phase at large $K$. The infrared bound of Fr\"ohlich, Simon and Spencer~\cite{FSS76} gives considerably more. Combined with the sum rule $\avg{\sigma_0^2}=1$, it yields $K_c\le\mathsf W/6\approx0.25273$, i.e.\ $r_c<1.658$, where $\mathsf W=1.516386\ldots$ is Watson's integral~\cite{Wat39}.
+
+\subsection{Main ideas}
+
+\Cref{thm:main} improves both classical bounds. Three ideas are responsible for this.
+
+\emph{The cost of a shortest path.} In Fisher's argument a walk is weighted by $u^{|\omega|}$ alone. If the walk is chosen as a \emph{shortest} connection inside a high-temperature graph, then none of the bonds spanned by its vertices other than its own steps can be present. Removing all these bonds from the normalization lowers the weight of the walk by a factor $e^{-I(P,u)}$. This factor is exponentially small in the length of the path. We write $I(P,u)$ as a sum of correlation integrals by interpolating all removed bonds simultaneously, and we bound each integral from below on a fixed finite graph. The walk-counting input is then of the same nature as the finite-memory bounds of~\cite{PT00}, with growth rate $4.730332$ (\cref{cert:transfer}). The improvement over Fisher's bound comes entirely from $e^{-I(P,u)}$.
+
+\emph{Counting paths with chords and shapes.} The local gain must be paid for at the chords of the path. These are summed by an exact exponential moment of the chord number, obtained from a growth argument of Rosenbluth type. Additional gains attached to the shapes of consecutive bonds are summed by a transfer operator on a finite automaton. Both estimates are uniform in the size of the periodic box.
+
+\emph{An infrared bound that keeps the zero mode.} A representation of the Ising weight by planar unit vectors gives, through reflection positivity, the infrared bound with coefficient $u^{-1}+u-2\avg{\sigma_0\sigma_{e_1}}$ in place of $1/K$. With the sum rule alone this already gives $r_c<\sqrt{1+\mathsf W}<1.58632$ (\cref{cor:singlesite}). We go further by retaining the zero Fourier mode as an unknown. Exact local relations, controlled through a mixture representation of the law of the spins on a small shell, then force it to be positive.
+
+The analytic framework of \cref{sec:paths,sec:counting,sec:infrared,sec:ordered} uses the lattice only through its reflection symmetry and through finitely many local computations. We expect it to apply to other nearest-neighbour ferromagnets once these computations are redone.
+
+\subsection{Strategy of the proof}
+
+\subsubsection*{The disordered side}
+Work on an even periodic box $\T_L=(\Z/L\Z)^3$. In the high-temperature expansion, $\avg{\sigma_x\sigma_y}_L$ is the ratio of the weight of bond sets with odd vertices $\{x,y\}$ to the weight $\cE(u)$ of even bond sets. In every such bond set choose a shortest path $P$ from $x$ to $y$. Its chords, namely the lattice bonds joining nonconsecutive vertices of $P$, are absent, for otherwise $P$ would not be shortest. Writing $D(P)$ for the set of all bonds spanned by the vertices of $P$, one obtains
+\[
+ \avg{\sigma_x\sigma_y}_L\le\sum_{P:x\to y}u^{|P|}e^{-I(P,u)},\qquad
+ I(P,u)=\log\frac{\cE(u)}{\cE(u\one_{E\setminus D(P)})}
+\]
+(\cref{lem:selection}). The quantity $I(P,u)\ge0$ is the free-energy cost of switching off all bonds in $D(P)$. We switch them off simultaneously along a one-parameter interpolation. The cost then becomes a sum, over $e\in D(P)$, of integrals of the correlation across $e$ in the interpolated system (\cref{lem:interp}). Griffiths' second inequality lets us bound each integrand from below on a fixed $28$-site graph surrounding $e$ (the \emph{prism}, \cref{fig:prism}). Only the occupation of ten sites by the path enters. Exact integration of $1024$ rational functions gives a table of local lower bounds.
+
+These local integrals are redistributed to the vertices of the path by a system of half-edge charges (\cref{sec:paths}). The result is a lower bound
+\[
+ I(P,u)+\theta\,c(P)\ \ge\ \gamma\,(|P|-13)_+ +\sum_i w_{\tau_i},
+\]
+valid for every path on every sufficiently large torus. Here $c(P)=|D(P)|-|P|$ is the number of chords, $\theta$ is a small price paid per chord, $\gamma$ is a guaranteed gain per vertex, and $w_{\tau_i}\ge0$ are extra gains attached to the shapes $\tau_i$ of consecutive triples of bonds (\cref{fig:shapes}). The chord price is necessary. A Hamiltonian path through the whole box spans every bond, so no gain proportional to $|P|$ can be uniform without it (\cref{rem:hamilton}).
+
+The weights are then summed over paths (\cref{sec:counting}). Two inputs suffice. The first is a transfer bound for the shape-weighted number of self-avoiding walks, obtained from a finite automaton that remembers a $16$-step suffix and has $12\,994\,574$ states. The second is an exact bound for the exponential moment $\sum_P(5/4)^{c(P)}$ of the chord number. It follows from a Rosenbluth-type growth argument. H\"older's inequality combines the two. The outcome is a geometric bound for the susceptibility, uniform in $L$, whenever a rational inequality holds. A field-tilt argument converts this bound into $m_+=0$ (\cref{prop:disorder}).
+
+\subsubsection*{The ordered side}
+On the same periodic boxes let $q_L$ be the second moment of the magnetization density, so that $\widehat G_L(0)=L^3q_L$ for the Fourier transform of the two-point function. We prove the infrared bound $\lambda(k)\widehat G_L(k)\le u^{-1}+u-2g_L$ for all $k\ne0$, where $g_L$ is the nearest-neighbour correlation (\cref{prop:infrared}). Integrated against five nonnegative trigonometric test polynomials, it gives linear inequalities between finitely many local correlations and the unknown limit $q$ of $q_L$.
+
+Further linear relations hold in every periodic box. These are translation identities, reflection-positivity squares, and comparisons with a graph from which a small region has been deleted. Each relation can be written as the mean of an explicit function of the $18$ spins on the shell $\{\|x\|_1=2\}$, integrated against their true marginal law $\mu_L$. A suitable linear combination $R$ of all $120$ relations satisfies $0\le\lim_L\mu_L(R)+Qq$ with an explicit $Q>0$. We then prove an \emph{upper} bound $\mu_L(R)\le\Uord<0$ (\cref{sec:ordered}). The unknown marginal $\mu_L$ is represented exactly as a mixture of $14\cdot2^{18}$ explicit finite measures. Finitely many inequalities restrict the mixture weights. The two bounds give $q\ge-\Uord/Q>0$, and a second field-tilt argument converts this into $m_+^2\ge q$ (\cref{prop:order}).
+
+\Cref{fig:flow} summarizes the logical structure of the proof.
+
+\input{figures/fig_flow}
+
+\subsection{The computer-assisted part}\label{sec:intro-cap}
+
+The proof uses finitely many explicit inequalities between rational numbers. We call them \emph{certificates}. Each certificate is stated in the text in the form in which it is used, together with the mathematical argument that reduces the analytic claim to it. Their verification is described in Appendix~\ref{app:verification}. The certificates fall into three groups.
+\begin{itemize}
+\item \emph{Local Ising computations.} These are exact rational lower bounds for $1024$ correlation integrals on the prism (\cref{cert:prism}). On the ordered side they are the $120$ local rows and the conditional expectations on the shell (\cref{cert:multipliers,cert:fields}). All are exact finite sums over spin configurations, evaluated with directed rounding.
+\item \emph{Combinatorial certificates.} These are the half-edge allocations (\cref{cert:allocation}) and the transfer bounds on the $16$-step automaton (\cref{cert:transfer}).
+\item \emph{Scalar arithmetic.} This covers the Green-function enclosures (\cref{cert:green}), the endpoint inequalities (\cref{cert:endpoint-lower,cert:interval}) and the derivative bounds used to extend the ordered certificate to an interval.
+\end{itemize}
+The large certificates were checked by two programs with different arithmetic or different enumeration (\cref{tab:programs}). The chord-moment bound of \cref{lem:rosenbluth}, on every cubic torus, and the integer arithmetic of the allocation in \cref{cert:allocation}(a) are in addition verified in the proof assistant Lean~4. The analytic inputs, namely the high-temperature expansion, correlation inequalities, reflection positivity, Fourier analysis and the thermodynamic limits, are proved or cited in the text.
+
+\subsection{Organization}
+
+\Cref{sec:prelim} collects standard facts. It also proves the two thermodynamic criteria (\cref{prop:disorder,prop:order}) that turn finite-volume estimates into statements about $m_+$. \Cref{sec:paths,sec:counting,sec:lower} prove the lower bound. \Cref{sec:paths} treats the cost of induced bonds, \cref{sec:counting} the summation over paths, and \cref{sec:lower} the final arithmetic. \Cref{sec:infrared,sec:ordered} prove the upper bound. \Cref{sec:discussion} discusses possible improvements. Appendix~\ref{app:verification} describes the verification of the certificates and Appendix~\ref{app:green} the Green-function enclosures.

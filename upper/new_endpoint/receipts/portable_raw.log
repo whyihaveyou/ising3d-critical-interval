@@ -1,0 +1,26 @@
+rebuilding physical model
+rebuilding integer residual
+r=3775/2386 odds_lower_1e10=[502492095, 515270524, 528601005, 542501939]
+PASS 8 corner geometries, 21 actual leaves, 4 exact 8192-term sums, 256 words and 40 oriented class inequalities
+orbits 3236 max weight bits 1577 ratio denominator bits [48, 261]
+PASS verified physical rows, margin, masks, positive traces and both input digests
+PASS 3 bits, 2 classes, 96 signed native entries against direct sums and the original raw kernel
+PASS 5 bits, 2 classes, 512 signed native entries against direct sums and the original raw kernel
+PASS 8 bits, 2 classes, 4096 signed native entries against direct sums and the original raw kernel
+PASS 4704 reduced-tensor comparisons and six production-mode rejections
+PASS class 0 total 1 of 14
+PASS class 1 total 2 of 14
+PASS class 3 total 3 of 14
+PASS class 6 total 4 of 14
+PASS class 7 total 5 of 14
+PASS class 15 total 6 of 14
+PASS class 22 total 7 of 14
+PASS class 23 total 8 of 14
+PASS class 24 total 9 of 14
+PASS class 25 total 10 of 14
+PASS class 27 total 11 of 14
+PASS class 30 total 12 of 14
+PASS class 60 total 13 of 14
+PASS class 105 total 14 of 14
+PASS 14 classes 3670016 full upper and 3661604 complement lower-cap comparisons; maximum individual RSS bytes 213581824 driver wall seconds 368.41
+PASS freshly rebuilt raw fields, all prefix counts, class minima and 56 sampled integers match

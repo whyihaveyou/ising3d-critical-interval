@@ -1,0 +1,22 @@
+\begin{figure}[t]
+\centering
+\begin{tikzpicture}[x=1.62cm,y=1cm]
+% axis from 1.530 to 1.600 ; x-coordinate = 100*(r-1.53)
+\fill[blue!12] (1.1630483,-0.18) rectangle (5.2145851,0.18);
+\draw[-{Stealth[length=5pt]}] (0,0) -- (7.35,0) node[right] {$r=e^{2K}$};
+\foreach \t/\lab in {0/1.53,1/1.54,2/1.55,3/1.56,4/1.57,5/1.58,6/1.59,7/1.60}
+  {\draw (\t,0.07) -- (\t,-0.07) node[below,font=\scriptsize] {$\lab$};}
+\foreach \t in {0.5,1.5,2.5,3.5,4.5,5.5,6.5}{\draw (\t,0.04) -- (\t,-0.04);}
+% markers
+\newcommand{\mk}[4]{\draw[#4,thick] (#1,-0.18) -- (#1,#2); \node[#4,above,font=\scriptsize,align=center] at (#1,#2) {#3};}
+\mk{0.4945302}{0.55}{Fisher with\\$\mu\le4.7387$}{black!70}
+\mk{1.1630483}{0.9}{$r_-$}{blue!70!black}
+\draw[black!70,thick] (2.7854029,-0.18) -- (2.7854029,0.55); \node[black!70,above left=0pt and -4pt,font=\scriptsize,align=right] at (2.7854029,0.55) {Monte Carlo\\$r_c\approx1.55785$};
+\mk{5.2145851}{0.9}{$r_+$}{blue!70!black}
+\mk{5.6312094}{1.25}{\cref{cor:singlesite}\\$\sqrt{1+\mathsf W}$}{black!70}
+\draw[-{Stealth[length=4pt]},black!70,thick] (6.75,0.55) -- (7.25,0.55);
+\node[black!70,above,font=\scriptsize,align=center] at (6.95,0.6) {FSS: $1.6578$};
+\end{tikzpicture}
+\caption{The interval of \cref{thm:main} (shaded). For comparison: Fisher's bound with the connective-constant bound of~\cite{PT00}, the Fr\"ohlich--Simon--Spencer bound (off scale), the single-site bound of \cref{cor:singlesite}, and the Monte Carlo estimate of~\cite{FXL18}.}
+\label{fig:interval}
+\end{figure}

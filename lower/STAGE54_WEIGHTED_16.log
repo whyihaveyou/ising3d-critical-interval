@@ -1,0 +1,5 @@
+memory 16 rows 12994574 edges 53221763
+direct physical path/motif check through 7 count 81390
+r=1927/1250 priced shape matrix upper in units 1e-6 4730331
+Perron lower and upper, units 1e-6 4687993 4688243
+u times optimistic spectral radius >1 by at least (units 1e-9) 3912056

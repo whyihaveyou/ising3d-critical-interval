@@ -1,0 +1,7 @@
+r 19269/12500 all-path contraction margin floor x1e12 74673
+r 309/200 sparse density 137/1000 normalized block margin floor x1e12 113923862243
+r 309/200 dense density 253/1000 normalized block margin floor x1e12 132118107306
+all-local-successors middle-sector obstruction floor x1e12 1004842998330
+arbitrary subsets versus sorted / one-row shortcut 1089
+torus side 4 noninitial prefixes 20706 prefixes with a hidden contact 2862
+torus side 8 noninitial prefixes 21372 prefixes with a hidden contact 1248

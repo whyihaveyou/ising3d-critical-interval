@@ -1,0 +1,22 @@
+degree r 15407/10000 u 5407/25407 panels 36 tested 136 symmetry orbits 123 vertex rows 8 edge rows 136
+edge slack, raw gain, chord price, net gain, Perron margin; units 1e-12
+6 7056488994 0 7056488994 49426616
+straight 10823706190 10839814237
+two distinct turns 8424061969 8436848599
+all stencil sites occupied 2713868508 2732028034
+walk r 1541/1000 u 541/2541 panels 192 tested 136 symmetry orbits 123 vertex rows 12 edge rows 210
+edge slack, raw gain, chord price, net gain, Perron margin; units 1e-12
+24 7445597666 0 7445597666 1922310
+straight 10851530253 10854516832
+two distinct turns 8446079329 8448417931
+all stencil sites occupied 2726176294 2728838249
+strict critical lower endpoint from the existing margin 1051047402734946162883735364514439/681844442968178837116264635485561
+entropy r 30829/20000 u 10829/50829 panels 64 tested 136 symmetry orbits 123 vertex rows 12 edge rows 210
+edge slack, raw gain, chord price, net gain, Perron margin; units 1e-12
+24 8362020128 900000000 8137020128 38978200
+straight 10880485789 10889561588
+two distinct turns 8469016976 8476169811
+all stencil sites occupied 2731285336 2740367641
+r=309/200 Hamilton path obstruction, units 1e-12
+max uniform gain < 12759795513
+required gain > 13237245382 gap > 477449869

@@ -1,0 +1,8 @@
+straight-straight bounds on log gain *1e12 11134945015 11144450304 weight *1e6 988855 988928
+straight-turn bounds on log gain *1e12 9899889967 9908350431 weight *1e6 990091 990150
+folded face bounds on log gain *1e12 9272072172 9279955542 weight *1e6 990720 990771
+twisted turns bounds on log gain *1e12 8670526165 8678021999 weight *1e6 991321 991368
+planar staircase bounds on log gain *1e12 8572910274 8580390291 weight *1e6 991419 991464
+physical marked three-bond comparisons 878
+debit per extra neighbour 1616680089/1000000000000 witness ((1, 5, 0, 0), 0, 0, 1)
+all chord lower *1e12 2795418500 total price 114728183/31250000000

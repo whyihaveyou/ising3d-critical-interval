@@ -1,0 +1,15 @@
+PASS class 0 total 1 of 14
+PASS class 1 total 2 of 14
+PASS class 3 total 3 of 14
+PASS class 6 total 4 of 14
+PASS class 7 total 5 of 14
+PASS class 15 total 6 of 14
+PASS class 22 total 7 of 14
+PASS class 23 total 8 of 14
+PASS class 24 total 9 of 14
+PASS class 25 total 10 of 14
+PASS class 27 total 11 of 14
+PASS class 30 total 12 of 14
+PASS class 60 total 13 of 14
+PASS class 105 total 14 of 14
+PASS 14 classes 3670016 full upper and 3661604 complement lower-cap comparisons; maximum individual RSS bytes 213598208 driver wall seconds 360.6

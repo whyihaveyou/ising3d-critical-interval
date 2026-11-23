@@ -1,0 +1,43 @@
+Lean (version 4.33.1, arm64-apple-darwin24.6.0, commit 819816b2e0a3bf405af45ae5c7af2491d8f5bee6, Release)
+elapsed 0.465 seconds
+STAGE54Kinetic sha256 2df2ceced0a1121f64101ea4747454c7aeaa2df700070c285a3fe7646af25b07
+'IsingStage54Kinetic.available_contacts' depends on axioms: [propext, Quot.sound]
+'IsingStage54Kinetic.contacts_eq_older' depends on axioms: [propext, Quot.sound]
+'IsingStage54Kinetic.localFactor' depends on axioms: [propext, Quot.sound]
+'IsingStage54Kinetic.tails_complete' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IsingStage54Kinetic.tails_nodup' depends on axioms: [propext, Quot.sound]
+'IsingStage54Kinetic.product_formula' depends on axioms: [propext, Quot.sound]
+'IsingStage54Kinetic.mass_bound' depends on axioms: [propext, Quot.sound]
+'IsingStage54Kinetic.full_bound' depends on axioms: [propext, Quot.sound]
+elapsed 5.129 seconds
+replaying STAGE54Kinetic
+elapsed 1.302 seconds
+8 declarations rechecked
+STAGE54Torus sha256 ffe2cdc24448ba90235062462d07d7c02d076cac9f880d206ad13b2f2c38da83
+'IsingStage54Torus.torus' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IsingStage54Torus.torus_chord_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IsingStage54Torus.wrap_contact' depends on axioms: [propext, Classical.choice, Quot.sound]
+'IsingStage54Torus.box4_three_steps' depends on axioms: [propext, Classical.choice, Quot.sound]
+elapsed 3.814 seconds
+replaying STAGE54Torus
+elapsed 2.725 seconds
+4 declarations rechecked
+STAGE54PrismData sha256 402fa321dcab0877b923780bf4d4ddf687d7f4eeccca67f6828ae502a4164bb5
+elapsed 2.203 seconds
+replaying STAGE54PrismData
+elapsed 1.699 seconds
+0 declarations rechecked
+STAGE54Prism sha256 09a717fc789e7a924b7a114989ed039610252f7c5f30212f65dc386581ae5730
+'IsingStage54Prism.labelled_cells' depends on axioms: [propext]
+'IsingStage54Prism.all_edge_checks' depends on axioms: [propext]
+'IsingStage54Prism.allocation_of_input' depends on axioms: [propext, Quot.sound]
+'IsingStage54Prism.star_domain' depends on axioms: [propext]
+'IsingStage54Prism.all_vertex_checks' depends on axioms: [propext]
+'IsingStage54Prism.tight_vertex' depends on axioms: [propext]
+'IsingStage54Prism.scalar_checks' does not depend on any axioms
+'IsingStage54Prism.extrapolated_endpoint_arithmetic' does not depend on any axioms
+elapsed 12.704 seconds
+replaying STAGE54Prism
+elapsed 7.271 seconds
+8 declarations rechecked
+PASS all-length weighted torus paths, terminal contacts, and finite prism allocations

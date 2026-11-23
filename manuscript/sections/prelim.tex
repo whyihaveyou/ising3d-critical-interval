@@ -1,0 +1,123 @@
+% ======================================================================
+\section{Preliminaries}\label{sec:prelim}
+% ======================================================================
+
+\subsection{Periodic boxes and standard inequalities}
+
+For an even integer $L\ge4$ let $\T_L=(\Z/L\Z)^3$ be the discrete torus, $E_L$ its set of unoriented nearest-neighbour bonds, and $V=L^3$ its number of sites. Since $L\ge3$, every site has six distinct neighbours and $|E_L|=3V$. We write $e_1,e_2,e_3$ for the coordinate unit vectors and $\|\cdot\|_1$ for the $\ell^1$-norm. The periodic Gibbs measure at coupling $K$ and field $h$ is
+\[
+ \mu_{L,K,h}(\sigma)=\frac{1}{Z_L(K,h)}\exp\Big(K\sum_{\{x,y\}\in E_L}\sigma_x\sigma_y+h\sum_{x\in\T_L}\sigma_x\Big),
+ \qquad \sigma\in\{-1,1\}^{\T_L},
+\]
+with expectation $\avg{\cdot}_{L,K,h}$. The finite-volume pressure is $p_L(K,h)=V^{-1}\log Z_L(K,h)$. When $h=0$ we drop it from the notation. The measure $\mu_{L,K,h}$ is invariant under translations of $\T_L$ and under the $48$ signed permutations of the coordinate axes. At $h=0$ it is also invariant under the global spin flip $\sigma\mapsto-\sigma$.
+
+We use the following classical facts.
+
+\begin{lemma}\label{lem:standard}
+Let $K>0$.
+\begin{enumerate}
+\item \textup{(Griffiths' inequalities~\cite{Gri67,KS68,Gin70}.)} For any finite graph with couplings $K_e\ge0$ and fields $h_x\ge0$, and any $A,B\subset V$, one has $\avg{\sigma_A}\ge0$ and $\avg{\sigma_A\sigma_B}\ge\avg{\sigma_A}\avg{\sigma_B}$, where $\sigma_A=\prod_{x\in A}\sigma_x$. Consequently $\avg{\sigma_A}$ is nondecreasing in every $K_e$ and every $h_x$.
+\item \textup{(Plus states.)} For $h\ge0$, finite $\Lambda\subset\Lambda'$ and $x\in\Lambda$, one has $\avg{\sigma_x}^+_{\Lambda,K,h}\ge\avg{\sigma_x}^+_{\Lambda',K,h}$. In particular the limit $m_+(K)$ in~\eqref{eq:Kc} exists. It equals $\lim_{\Lambda\uparrow\Z^3}\avg{\sigma_x}^+_{\Lambda,K,0}$ for every $x$, and it is nondecreasing in $K$.
+\item \textup{(GHS inequality~\cite{GHS70}.)} On $\T_L$ the magnetization $M_L(h)=\avg{\sigma_0}_{L,K,h}$ is concave on $[0,\infty)$.
+\item \textup{(Pressure.)} For every $h\in\R$ the limits
+\[
+ \lim_{L\to\infty,\ L\text{ even}}p_L(K,h)\qquad\text{and}\qquad\lim_{n\to\infty}|B_n|^{-1}\log Z^+_{B_n}(K,h)
+\]
+exist and are equal. We denote their common value by $p(K,h)$.
+\end{enumerate}
+\end{lemma}
+
+Parts~(i)--(iii) are standard; see e.g.~\cite[Chap.~3]{FV17}. For~(iv) one compares $\log Z$ for periodic, free and plus boundary conditions. Removing or inserting the $O(L^2)$ boundary bonds changes $\log Z$ by $O(KL^2)$. The existence of the free-boundary limit follows from subadditivity~\cite[Sect.~3.2]{FV17}.
+
+\subsection{The high-temperature expansion}\label{sec:HT}
+
+Let $G=(\mathcal V,\mathcal B)$ be a finite graph and let $a=(a_e)_{e\in\mathcal B}\in[0,1)^{\mathcal B}$ be bond weights. We consider the Ising model on $G$ with couplings $K_e=\operatorname{artanh}a_e$. For $A\subset\mathcal B$ we write $\partial A$ for the set of vertices of odd degree in $(\mathcal V,A)$. Put
+\begin{equation}\label{eq:evenpoly}
+ \cE_G(a)=\sum_{\substack{A\subset\mathcal B\\ \partial A=\varnothing}}\prod_{e\in A}a_e,\qquad
+ \cO_G(x,y;a)=\sum_{\substack{A\subset\mathcal B\\ \partial A=\{x,y\}}}\prod_{e\in A}a_e\qquad(x\ne y).
+\end{equation}
+Expanding $e^{K_e\sigma_x\sigma_y}=\cosh K_e\,(1+a_e\sigma_x\sigma_y)$ and summing over spins gives
+\begin{equation}\label{eq:HT}
+ \avg{\sigma_x\sigma_y}_{G,a}=\frac{\cO_G(x,y;a)}{\cE_G(a)}.
+\end{equation}
+We call $A$ with $\partial A=\varnothing$ an \emph{even} bond set and $A$ with $\partial A=\{x,y\}$ a \emph{two-source} bond set. Both polynomials are multilinear in $a$ with nonnegative coefficients. For uniform weights $a\equiv u$ on $\T_L$ we abbreviate $\cE(u)=\cE_{\T_L}(u\one)$. For $F\subset E_L$ we write $\cE(u\one_F)$ for the even polynomial in which the bonds of $F$ have weight $u$ and the others weight $0$, i.e.\ for the even polynomial of the graph $(\T_L,F)$.
+
+\begin{lemma}[Bond factorization]\label{lem:factor}
+Let $e=\{v,w\}\in\mathcal B$ and let $G-e$ denote $G$ with $e$ removed. Then
+\[
+ \cE_G(a)=\cE_{G-e}(a)\bigl(1+a_e\avg{\sigma_v\sigma_w}_{G-e,a}\bigr),
+ \qquad
+ \frac{\partial}{\partial a_e}\log\cE_G(a)=\frac{C_e(a)}{1+a_eC_e(a)},
+\]
+where $C_e(a)=\avg{\sigma_v\sigma_w}_{G-e,a}$ does not depend on $a_e$.
+\end{lemma}
+
+\begin{proof}
+Split the even bond sets according to whether they contain $e$. Those that do not are the even bond sets of $G-e$. If $e\in A$, then $A\setminus\{e\}$ is a two-source bond set of $G-e$ with sources $v,w$. Hence $\cE_G=\cE_{G-e}+a_e\cO_{G-e}(v,w)$. Divide by $\cE_{G-e}$ and use~\eqref{eq:HT}. The derivative formula follows because $\cE_{G-e}$ and $C_e$ do not involve $a_e$.
+\end{proof}
+
+By \cref{lem:standard}(i), $C_e(a)\ge0$ is nondecreasing in every $a_f$, $f\ne e$, and deleting bonds of $G-e$ can only decrease it. Since $x\mapsto x/(1+sx)$ is increasing on $[0,\infty)$ for $s\ge0$, the logarithmic derivative in \cref{lem:factor} inherits this monotonicity.
+
+\subsection{Two thermodynamic criteria}\label{sec:criteria}
+
+The finite-volume estimates of this paper are proved on periodic boxes. The following two propositions transfer them to the plus-state magnetization. Put
+\[
+ \chi_L(K)=\sum_{y\in\T_L}\avg{\sigma_0\sigma_y}_{L,K},\qquad
+ M_L=\frac1V\sum_{x\in\T_L}\sigma_x,\qquad
+ q_L(K)=\avg{M_L^2}_{L,K}=\frac{\chi_L(K)}{V}.
+\]
+
+\begin{proposition}[Disorder criterion]\label{prop:disorder}
+If $X:=\sup\{\chi_L(K):L\ge L_0\text{ even}\}<\infty$ for some $L_0$, then $m_+(K)=0$.
+\end{proposition}
+
+\begin{proof}
+Fix $h>0$. By translation invariance $\partial_hp_L(K,h)=M_L(h)$, $M_L(0)=0$ and $M_L'(0)=\chi_L(K)$. By \cref{lem:standard}(iii), $M_L(h')\le h'\chi_L(K)\le h'X$ for $h'\ge0$. Integrating,
+\[
+ p_L(K,h)-p_L(K,0)\le\tfrac12h^2X\qquad(L\ge L_0).
+\]
+Letting $L\to\infty$ gives $p(K,h)-p(K,0)\le\frac12h^2X$.
+
+On the other hand, put $\overline M_n(h)=|B_n|^{-1}\sum_{x\in B_n}\avg{\sigma_x}^+_{B_n,K,h}$. This is the $h$-derivative of $|B_n|^{-1}\log Z^+_{B_n}(K,h)$. It is nondecreasing in $h$ by \cref{lem:standard}(i). By \cref{lem:standard}(ii) every term satisfies $\avg{\sigma_x}^+_{B_n,K,0}\ge m_+(K)$. Hence
+\[
+ |B_n|^{-1}\bigl(\log Z^+_{B_n}(K,h)-\log Z^+_{B_n}(K,0)\bigr)\ge h\,\overline M_n(0)\ge h\,m_+(K).
+\]
+By \cref{lem:standard}(iv), the left-hand side converges to $p(K,h)-p(K,0)$. Thus $hm_+(K)\le\frac12h^2X$ for every $h>0$, and $m_+(K)=0$.
+\end{proof}
+
+\begin{proposition}[Order criterion]\label{prop:order}
+If $L_k\to\infty$ is a sequence of even integers with $q_{L_k}(K)\to q$, then $m_+(K)^2\ge q$.
+\end{proposition}
+
+\begin{proof}
+We may assume $q>0$. Fix $0<a<\sqrt q$ and write $V_k=L_k^3$, $\Prob_k=\mu_{L_k,K,0}$. By spin-flip symmetry, $\pi_k:=\Prob_k(M_{L_k}\ge a)=\Prob_k(M_{L_k}\le-a)$. Since $|M_L|\le1$,
+\[
+ q_{L_k}\le a^2(1-2\pi_k)+2\pi_k,\qquad\text{so}\qquad \pi_k\ge\frac{q_{L_k}-a^2}{2(1-a^2)},
+\]
+which is bounded away from $0$ for large $k$. For $h>0$,
+\[
+ \frac{Z_{L_k}(K,h)}{Z_{L_k}(K,0)}=\avg{e^{hV_kM_{L_k}}}_{L_k,K}\ge\pi_ke^{hV_ka},
+\]
+hence $p_{L_k}(K,h)-p_{L_k}(K,0)\ge ha+V_k^{-1}\log\pi_k$. Letting $k\to\infty$ and using \cref{lem:standard}(iv) gives $p(K,h)-p(K,0)\ge ha$.
+
+For the reverse inequality fix $R\ge1$. Convexity of $h\mapsto\log Z^+_{B_n}(K,h)$ gives
+\[
+ |B_n|^{-1}\bigl(\log Z^+_{B_n}(K,h)-\log Z^+_{B_n}(K,0)\bigr)\le h\,\overline M_n(h).
+\]
+If $x+B_R\subset B_n$, then \cref{lem:standard}(ii) and translation invariance of $\Z^3$ give $\avg{\sigma_x}^+_{B_n,K,h}\le\avg{\sigma_0}^+_{B_R,K,h}$. The remaining sites form a fraction $O(R/n)$ of $B_n$, and each contributes at most $1$. Letting $n\to\infty$ yields $ha\le p(K,h)-p(K,0)\le h\avg{\sigma_0}^+_{B_R,K,h}$. Divide by $h$ and let $h\downarrow0$. The right-hand side is a finite-volume expectation and is continuous in $h$. This gives $a\le\avg{\sigma_0}^+_{B_R,K,0}$. Letting $R\to\infty$ and then $a\uparrow\sqrt q$ proves $\sqrt q\le m_+(K)$.
+\end{proof}
+
+\begin{corollary}\label{cor:monotone}
+\begin{enumerate}
+\item If $m_+(K)=0$ for all $K$ in a right neighbourhood $[K_0,K_0+\delta)$, then $K_c\ge K_0+\delta>K_0$.
+\item If $m_+(K_1)>0$, then $K_c\le K_1$.
+\end{enumerate}
+\end{corollary}
+
+\begin{proof}
+Both statements follow from the definition~\eqref{eq:Kc} and the monotonicity of $m_+$ in $K$ (\cref{lem:standard}(ii)).
+\end{proof}
+
+\subsection{Certificates}\label{sec:conventions}
+
+A \emph{certificate} is a finite list of assertions about explicitly given rational numbers or integers. Examples are a table of rational lower bounds for finitely many integrals, an integer vector $v$ satisfying finitely many row inequalities $(Av)_i\le\Lambda v_i$, or a single strict inequality between two rationals. All certificates are formulated so that their truth can be decided by exact integer arithmetic. Where a real quantity such as an integral, a power $w^j$ or a square root must be bounded, the bound is rounded outward: down for lower bounds and up for upper bounds. The rounding rule is part of the statement of the certificate. Decimal numbers in certificates are exact decimal rationals, and integers written in units of $10^{-12}$ are exact numerators. The statement of each certificate in the text records what is asserted. Appendix~\ref{app:verification} records how it was checked.

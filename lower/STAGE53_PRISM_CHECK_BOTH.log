@@ -1,0 +1,20 @@
+coordinates 28 bonds 50 fundamental cycles 23 per parity 8388608 labelled masks 1024 full-geometry orbits 123
+r 15407/10000 subintervals 36 colours 10 edge constraints 1024 interior oriented patterns 240 least gain 7056488994 over 1000000000000
+limiting vertex occupied bits 0b111111 path directions (0, 1)
+chord allowance 0 net per-origin gain 3528244497/500000000000
+tight edge row (slack, masks, offset, lower, assigned, upper) (6, (3, 28), 0, 5440960996, 5440960990, 5455672709)
+floor 1e12 * (cubic Taylor lower/(u*SAW)-1) 49426616
+two algorithms, both endpoints of all 136 reference integral rows identical
+r 1541/1000 subintervals 192 colours 20 edge constraints 1637 interior oriented patterns 240 least gain 7445597666 over 1000000000000
+limiting vertex occupied bits 0b111111 path directions (0, 1)
+chord allowance 0 net per-origin gain 3722798833/500000000000
+tight edge row (slack, masks, offset, lower, assigned, upper) (24, (3, 12), 0, 5579033468, 5579033444, 5581437039)
+floor 1e12 * (cubic Taylor lower/(u*SAW)-1) 1922310
+two algorithms, both endpoints of all 136 reference integral rows identical
+r 30829/20000 subintervals 64 colours 20 edge constraints 1637 interior oriented patterns 240 least gain 8362020128 over 1000000000000
+limiting vertex occupied bits 0b111111 path directions (0, 1)
+chord allowance 9/10000 net per-origin gain 254281879/31250000000
+tight edge row (slack, masks, offset, lower, assigned, upper) (24, (7, 31), 10, 3400456086, 4300456062, 3409080040)
+floor 1e12 * (cubic Taylor lower/(u*SAW)-1) 38978200
+two algorithms, both endpoints of all 136 reference integral rows identical
+PASS independent high-temperature, physical weakening, quadrature, colour and gain checks

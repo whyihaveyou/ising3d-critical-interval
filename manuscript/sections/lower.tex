@@ -1,0 +1,74 @@
+% ======================================================================
+\section{Proof of the lower bound}\label{sec:lower}
+% ======================================================================
+
+\subsection{A susceptibility criterion}
+
+Write $T_3(x)=1+x+x^2/2+x^3/6$. For $x>0$ one has $T_3(x)<e^x$.
+
+\begin{proposition}[Geometric susceptibility bound]\label{prop:geometric}
+Let $u\ge u_0$ and let $(\alpha^{\rm P},\alpha^{\rm C},w,\theta,\gamma)$, with $\gamma\ge0$, be an allocation admissible for a table $\ell\le\ell(u_0)$. Put $\Omega(P)=\exp(-\sum_{i=1}^{|P|-2}w_{\tau_i})$. Suppose that for some $C,\rho>0$ and all even $L\ge8$ and $n\ge1$
+\begin{equation}\label{eq:pathsum}
+ \sum_{|P|=n}\Omega(P)e^{\theta c(P)}\le C\rho^n,
+\end{equation}
+the sum running over paths from a fixed root. Then for all even $L\ge8$
+\[
+ \chi_L(K)\ \le\ 1+Ce^{13\gamma}\sum_{n\ge1}\bigl(u\rho e^{-\gamma}\bigr)^n .
+\]
+\end{proposition}
+
+\begin{proof}
+By \cref{prop:cost}, $e^{-I(P,u)}\le e^{\theta c(P)}\Omega(P)e^{-\gamma(n-13)_+}\le e^{13\gamma}e^{-\gamma n}\Omega(P)e^{\theta c(P)}$ for $|P|=n$. Insert this in \cref{lem:selection}. Summing over $y\ne0$ amounts to summing over all paths from the root $0$, and the term $y=0$ contributes $1$. Grouping paths by length and applying~\eqref{eq:pathsum} gives the claim.
+\end{proof}
+
+\begin{certificate}[Endpoint arithmetic, disordered side]\label{cert:endpoint-lower}
+Let $u_1=6769/31769$, $u_2=677/3177$, and
+\[
+ \bar\gamma_2=\gamma_2-\frac{\theta_2}4=\frac{16036634803}{2\cdot10^{12}} .
+\]
+The following hold in exact rational arithmetic.
+\begin{enumerate}[label=\textup{(\alph*)}]
+\item One has
+\[
+ \Bigl\lfloor10^{12}\Bigl(\frac{T_3(\bar\gamma_2)}{U_2u_2}-1\Bigr)\Bigr\rfloor=44289252,\qquad
+ \frac{U_2+T_3(\bar\gamma_2)}{U_2-T_3(\bar\gamma_2)}=r_- .
+\]
+\item $(5/U_2)^4<5/4$, and $\theta_2<\frac15<\log\frac54$.
+\item One has $u_*<u_1$ and
+\[
+ \Bigl\lfloor10^{12}\Bigl(\frac{T_3(\gamma_1)}{\Lambda_1u_1}-1\Bigr)\Bigr\rfloor=74673 .
+\]
+\end{enumerate}
+\end{certificate}
+
+\subsection{The lower bound}
+
+\begin{theorem}\label{thm:lower}
+There is $\delta>0$ such that for all $r\in[r_-,r_-+\delta)$ the susceptibilities $\chi_L(K)$, $L\ge8$ even, are bounded uniformly in $L$. Consequently $m_+(K)=0$ on this interval, and $e^{2K_c}>r_-$.
+\end{theorem}
+
+\begin{proof}
+Put $u'=T_3(\bar\gamma_2)/U_2$. By \cref{cert:endpoint-lower}(a), $u'>u_2$ and $(1+u')/(1-u')=r_-$. Since $\bar\gamma_2>0$, $u'U_2e^{-\bar\gamma_2}=T_3(\bar\gamma_2)e^{-\bar\gamma_2}<1$. Choose $\delta'>0$ with $(u'+\delta')U_2e^{-\bar\gamma_2}<1$.
+
+Let $u\in[u',u'+\delta')$. Then $u\ge u_2$. By \cref{cert:prism,cert:allocation}(b) the allocation of \cref{tab:charges2,tab:shapes} is admissible for $\underline\ell(u_2)\le\ell(u_2)$. By \cref{lem:holder}, \eqref{eq:pathsum} holds with $\theta=\theta_2$, $C=C_2$ and $\rho=U_2e^{\theta_2/4}$. \Cref{prop:geometric} gives
+\[
+ \chi_L(K)\le1+C_2e^{13\gamma_2}\sum_{n\ge1}\bigl(uU_2e^{-\bar\gamma_2}\bigr)^n<\infty,
+\]
+uniformly in $L$, because $u\rho e^{-\gamma_2}=uU_2e^{-\bar\gamma_2}<1$. By \cref{prop:disorder}, $m_+(K)=0$ for $\tanh K\in[u',u'+\delta')$. Since $r=(1+u)/(1-u)$ is increasing in $u$, \cref{cor:monotone}(i) gives $e^{2K_c}>r_-$.
+\end{proof}
+
+\begin{remark}[Exponential decay]
+The proof gives more. In the bound of \cref{lem:selection} only paths of length at least the graph distance $|y|$ contribute. On the same interval, therefore, $G_L(0,y)\le C'\varrho^{|y|}$ with $\varrho=uU_2e^{-\bar\gamma_2}<1$ and $C'$ independent of $L$.
+\end{remark}
+
+\subsection{A variant without shape charges}
+
+The allocation of \cref{cert:allocation}(a) has no shape charges. Combined with the contact operator it gives a slightly weaker bound, which we record because it uses the chord price in a different way. Here the contacts are paid for inside the transfer operator, and no H\"older step is needed.
+
+\begin{proposition}\label{prop:r1}
+For $r$ in a right neighbourhood of $r_1=19269/12500=1.54152$, the susceptibilities $\chi_L$ are uniformly bounded. In particular $e^{2K_c}>r_1$.
+\end{proposition}
+
+\begin{proof}
+Let $u\ge u_1>u_*$. The allocation of \cref{tab:charges1} is admissible for $\underline\ell(u_*)$ with $\Omega\equiv1$. Since $e^{\theta_1}<w_1$, \cref{lem:transfer,cert:transfer}(a) give~\eqref{eq:pathsum} with $\theta=\theta_1$ and $\rho=\Lambda_1$. By \cref{cert:endpoint-lower}(c), $u_1\Lambda_1e^{-\gamma_1}<u_1\Lambda_1/T_3(\gamma_1)<1$, and the strict inequality persists on a right neighbourhood. Conclude with \cref{prop:geometric,prop:disorder}.
+\end{proof}

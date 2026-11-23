@@ -1,0 +1,33 @@
+PASS original direct physical fields 0 [33, 37449]
+PASS original direct physical fields 1 [531, 39502]
+PASS original direct physical fields 3 [5087, 43608]
+PASS original direct physical fields 6 [209, 49767]
+PASS original direct physical fields 7 [2773, 51820]
+PASS original direct physical fields 15 [253, 68244]
+PASS original direct physical fields 22 [1273, 82615]
+PASS original direct physical fields 23 [1627, 84668]
+PASS original direct physical fields 24 [105, 86721]
+PASS original direct physical fields 25 [89, 88774]
+PASS original direct physical fields 27 [601, 92880]
+PASS original direct physical fields 30 [377, 99039]
+PASS original direct physical fields 60 [3553, 160629]
+PASS original direct physical fields 105 [4073, 253014]
+PASS 56 unnormalized physical integers (14 classes × 2 fields × 2 caps)
+      100.71 real         7.93 user         1.46 sys
+            70385664  maximum resident set size
+                   0  average shared memory size
+                   0  average unshared data size
+                   0  average unshared stack size
+               36580  page reclaims
+                1399  page faults
+                   0  swaps
+                   0  block input operations
+                   0  block output operations
+                   0  messages sent
+                   0  messages received
+                   0  signals received
+                 924  voluntary context switches
+              102958  involuntary context switches
+          1480852823  instructions retired
+           985112661  cycles elapsed
+            18039096  peak memory footprint

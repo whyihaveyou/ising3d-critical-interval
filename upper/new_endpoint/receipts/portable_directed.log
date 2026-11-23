@@ -1,0 +1,26 @@
+rebuilding physical model
+rebuilding integer residual
+r=3775/2386 odds_lower_1e10=[502492095, 515270524, 528601005, 542501939]
+PASS 8 corner geometries, 21 actual leaves, 4 exact 8192-term sums, 256 words and 40 oriented class inequalities
+source class 1 of 14 checked
+source class 7 of 14 checked
+source class 14 of 14 checked
+PASS directed 14 classes, 3670016 full upper and 3661604 complement caps
+      426.26 real        37.98 user         4.31 sys
+           211582976  maximum resident set size
+                   0  average shared memory size
+                   0  average unshared data size
+                   0  average unshared stack size
+              217431  page reclaims
+                1173  page faults
+                   0  swaps
+                   0  block input operations
+                   0  block output operations
+                   0  messages sent
+                   0  messages received
+                   0  signals received
+                 756  voluntary context switches
+              362404  involuntary context switches
+        196629196354  instructions retired
+         87776901144  cycles elapsed
+           332055128  peak memory footprint

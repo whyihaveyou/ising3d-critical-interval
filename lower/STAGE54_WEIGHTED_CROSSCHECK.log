@@ -1,0 +1,5 @@
+coordinates 28 bonds 50 fundamental cycles 23 per parity 8388608 labelled masks 1024 full-geometry orbits 123
+two algorithms, both endpoints of all 136 reference integral rows identical
+actual directions: priced path rows 6400 chord rows 676 vertex stars 240 minimum slacks 301 1301
+contraction margin floor x1e12 44289252
+strict lower endpoint 275442362401406827838944754146320499627/178669509598593172161055245853679500373 floor x1e15 1541630483120638
