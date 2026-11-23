@@ -56,6 +56,11 @@ _, hi = log_bounds(r_hi)
 check("K lower", lo / 2 > F("0.2164203058063"))
 check("K upper", hi / 2 < F("0.2293910294998"))
 
+mu_bar = F("4.7114")
+check("Fisher baseline with mu < 4.7114", (mu_bar + 1) / (mu_bar - 1) > F("1.5388"))
+lo_f, _ = log_bounds((mu_bar + 1) / (mu_bar - 1))
+check("Fisher baseline in K", lo_f / 2 > F("0.2155"))
+
 # ---------------------------------------------------------------- couplings
 u = lambda r: (r - 1) / (r + 1)
 u_star, u1, u2 = u(F(30829, 20000)), u(F(19269, 12500)), u(F(1927, 1250))

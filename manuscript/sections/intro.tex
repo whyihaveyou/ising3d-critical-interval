@@ -2,7 +2,13 @@
 \section{Introduction}\label{sec:intro}
 % ======================================================================
 
-\subsection{The model and the main result}
+\subsection{The three-dimensional Ising model}
+
+The Ising model is the simplest model of a phase transition. In three dimensions its critical point is the prototype of a universality class that also contains the liquid--vapour critical point and uniaxial magnets~\cite{PV02}. In two dimensions the model is exactly solvable. Kramers and Wannier located the critical point by duality~\cite{KW41}, and Onsager computed the free energy~\cite{Ons44}. No comparable solution is known in three dimensions. Nevertheless the critical behaviour has been determined with remarkable precision by high-temperature series, Monte Carlo simulation and, more recently, the conformal bootstrap~\cite{PV02,FXL18,EPPRSV12,KPSV16}.
+
+The rigorous theory has also advanced substantially. In every dimension $d\ge2$ the transition is sharp~\cite{ABF87,DCT16}. In three dimensions the spontaneous magnetization vanishes continuously at the critical point~\cite{ADCS15}, and the infrared bound of Fr\"ohlich, Simon and Spencer~\cite{FSS76} controls the two-point function. In four dimensions the scaling limit is Gaussian~\cite{AD21}. These results describe the \emph{nature} of the transition. The present paper is concerned with its \emph{location}: we determine the critical coupling of the simple-cubic model to within an explicit interval of relative width $2.6\%$.
+
+\subsection{The critical coupling}
 
 Let $\Lambda\subset\Z^3$ be finite and let $E(\Lambda)$ denote the set of unoriented nearest-neighbour bonds $\{x,y\}$ with $x,y\in\Lambda$, each bond counted once. For a dimensionless coupling $K=J/(k_{\mathrm B}T)>0$, a dimensionless magnetic field $h\in\R$ and a boundary condition $\eta\in\{-1,+1\}^{\Z^3}$, the Ising Gibbs measure on $\{-1,+1\}^\Lambda$ is
 \begin{equation}\label{eq:gibbs}
@@ -22,6 +28,16 @@ The limit exists and $m_+$ is nondecreasing in $K$ by the Griffiths inequalities
 \end{equation}
 and we write $r_c=e^{2K_c}$.
 
+Numerically, $K_c=0.221654626(5)$~\cite{FXL18}, i.e.\ $r_c\approx1.557854$. Rigorous bounds on $K_c$ go back to the beginnings of the subject, and each side rests on a single global inequality.
+
+\emph{Lower bounds.} Fisher~\cite{Fis67} bounded the two-point function by a sum over self-avoiding walks, $\avg{\sigma_x\sigma_y}\le\sum_{\omega:x\to y}u^{|\omega|}$. Consequently $\tanh K_c\ge1/\mu$, where $\mu$ is the connective constant of $\Z^3$. Rigorous upper bounds on $\mu$ have been obtained by counting walks with finite memory~\cite{Alm93,PT00} and from exact enumerations~\cite{MJHMJG00}. The bound $\mu<4.7114$ of~\cite{MJHMJG00} gives $r_c>(\mu+1)/(\mu-1)>1.5388$, i.e.\ $K_c>0.2155$.
+
+\emph{Upper bounds.} Peierls-type contour arguments~\cite{Pei36,Gri64,WGF67} give an ordered phase at large $K$. The infrared bound~\cite{FSS76} gives considerably more. Combined with the sum rule $\avg{\sigma_0^2}=1$, it yields $K_c\le\mathsf W/6\approx0.25273$, i.e.\ $r_c<1.658$, where $\mathsf W=1.516386\ldots$ is Watson's integral~\cite{Wat39}.
+
+Together these classical bounds confine $r_c$ to an interval of relative width about $7\%$. Each of them compares the Ising model with a simpler object, the self-avoiding walk on one side and the Gaussian free field on the other, and neither uses the local structure of the Ising interaction. In percolation, computer-assisted methods locate critical probabilities within narrow intervals with rigorously controlled confidence~\cite{BBW05,RW07}. The aim of the present work is to bring such quantitative control to the Ising model, by combining classical correlation inequalities with finite local computations certified in exact arithmetic.
+
+\subsection{Main result}
+
 \begin{theorem}[Critical interval]\label{thm:main}
 For the nearest-neighbour Ising ferromagnet on $\Z^3$,
 \begin{equation}\label{eq:main}
@@ -39,31 +55,21 @@ In decimal form, $1.541630483120638<r_-$ and $r_+<1.582145850755612$, and
 
 \input{figures/fig_interval}
 
-The width of the interval is $r_+-r_-=0.04051536763497\ldots$, about $2.6\%$ of its midpoint. The Monte Carlo estimate $K_c=0.221654626(5)$ of Ferrenberg, Xu and Landau~\cite{FXL18}, i.e.\ $r_c\approx1.557854$, lies inside it.
-
-The two inequalities in~\eqref{eq:main} are proved by different arguments, one in each phase. For the lower bound we show (\cref{thm:lower}) that on a right neighbourhood of $r_-$ the zero-field susceptibility of every sufficiently large even periodic box is bounded uniformly in the box, which forces $m_+=0$. For the upper bound we show (\cref{thm:upper}) that on an explicit interval of length $4.075\cdot10^{-11}$ containing $r_+$ the squared magnetization density of large periodic boxes has a strictly positive lower limit, which forces $m_+>0$. By the sharpness of the phase transition~\cite{ABF87,DCT16}, the interval~\eqref{eq:main} therefore also encloses the threshold between finite and infinite susceptibility.
-
-\subsection{Background}
-
-The simple-cubic Ising model has resisted exact solution, and its critical coupling is known to high precision from numerical work; see~\cite{FXL18} and the references therein. Rigorous two-sided bounds go back to the beginnings of the subject.
-
-\emph{Lower bounds on $K_c$.} Fisher~\cite{Fis67} bounded the two-point function by a sum over self-avoiding walks, $\avg{\sigma_x\sigma_y}\le\sum_{\omega:x\to y}u^{|\omega|}$. Consequently $u_c=\tanh K_c\ge1/\mu$, where $\mu$ is the connective constant of $\Z^3$. With the rigorous upper bound $\mu\le4.7387$ of P\"onitz and Tittmann~\cite{PT00}, this gives $r_c\ge(\mu+1)/(\mu-1)>1.5349$, i.e.\ $K_c>0.2142$.
-
-\emph{Upper bounds on $K_c$.} Peierls-type contour arguments~\cite{Pei36,Gri64,WGF67} give an ordered phase at large $K$. The infrared bound of Fr\"ohlich, Simon and Spencer~\cite{FSS76} gives considerably more. Combined with the sum rule $\avg{\sigma_0^2}=1$, it yields $K_c\le\mathsf W/6\approx0.25273$, i.e.\ $r_c<1.658$, where $\mathsf W=1.516386\ldots$ is Watson's integral~\cite{Wat39}.
+The interval has width $r_+-r_-=0.04051536763497\ldots$. It contains the Monte Carlo value of~\cite{FXL18}. The two inequalities are proved by different arguments, one in each phase. For the lower bound we show (\cref{thm:lower}) that on a right neighbourhood of $r_-$ the zero-field susceptibility of every sufficiently large even periodic box is bounded uniformly in the box, which forces $m_+=0$. For the upper bound we show (\cref{thm:upper}) that on an explicit interval of length $4.075\cdot10^{-11}$ containing $r_+$ the squared magnetization density of large periodic boxes has a strictly positive lower limit, which forces $m_+>0$. By the sharpness of the phase transition~\cite{ABF87,DCT16}, the interval~\eqref{eq:main} therefore also encloses the threshold between finite and infinite susceptibility.
 
 \subsection{Main ideas}
 
-\Cref{thm:main} improves both classical bounds. Three ideas are responsible for this.
+Three ideas lead to \cref{thm:main}.
 
-\emph{The cost of a shortest path.} In Fisher's argument a walk is weighted by $u^{|\omega|}$ alone. If the walk is chosen as a \emph{shortest} connection inside a high-temperature graph, then none of the bonds spanned by its vertices other than its own steps can be present. Removing all these bonds from the normalization lowers the weight of the walk by a factor $e^{-I(P,u)}$. This factor is exponentially small in the length of the path. We write $I(P,u)$ as a sum of correlation integrals by interpolating all removed bonds simultaneously, and we bound each integral from below on a fixed finite graph. The walk-counting input is then of the same nature as the finite-memory bounds of~\cite{PT00}, with growth rate $4.730332$ (\cref{cert:transfer}). The improvement over Fisher's bound comes entirely from $e^{-I(P,u)}$.
+\emph{The cost of a shortest path.} In Fisher's argument a walk is weighted by $u^{|\omega|}$ alone. If the walk is chosen as a \emph{shortest} connection inside a high-temperature graph, then none of the bonds spanned by its vertices, apart from its own steps, can be present. Removing all these bonds from the normalization lowers the weight of the walk by a factor $e^{-I(P,u)}$ that is exponentially small in its length. We write $I(P,u)$ as a sum of correlation integrals by switching off all removed bonds simultaneously, and we bound each integral from below on a fixed finite graph around the bond.
 
-\emph{Counting paths with chords and shapes.} The local gain must be paid for at the chords of the path. These are summed by an exact exponential moment of the chord number, obtained from a growth argument of Rosenbluth type. Additional gains attached to the shapes of consecutive bonds are summed by a transfer operator on a finite automaton. Both estimates are uniform in the size of the periodic box.
+\emph{Counting paths with chords and shapes.} The local gain must be paid for at the chords of the path. These are summed by an exact exponential moment of the chord number, obtained from a growth argument of Rosenbluth type. Further gains attached to the shapes of consecutive bonds are summed by a transfer operator on a finite automaton. Both estimates are uniform in the size of the periodic box.
 
 \emph{An infrared bound that keeps the zero mode.} A representation of the Ising weight by planar unit vectors gives, through reflection positivity, the infrared bound with coefficient $u^{-1}+u-2\avg{\sigma_0\sigma_{e_1}}$ in place of $1/K$. With the sum rule alone this already gives $r_c<\sqrt{1+\mathsf W}<1.58632$ (\cref{cor:singlesite}). We go further by retaining the zero Fourier mode as an unknown. Exact local relations, controlled through a mixture representation of the law of the spins on a small shell, then force it to be positive.
 
 The analytic framework of \cref{sec:paths,sec:counting,sec:infrared,sec:ordered} uses the lattice only through its reflection symmetry and through finitely many local computations. We expect it to apply to other nearest-neighbour ferromagnets once these computations are redone.
 
-\subsection{Strategy of the proof}
+\subsection{Outline of the proof}
 
 \subsubsection*{The disordered side}
 Work on an even periodic box $\T_L=(\Z/L\Z)^3$. In the high-temperature expansion, $\avg{\sigma_x\sigma_y}_L$ is the ratio of the weight of bond sets with odd vertices $\{x,y\}$ to the weight $\cE(u)$ of even bond sets. In every such bond set choose a shortest path $P$ from $x$ to $y$. Its chords, namely the lattice bonds joining nonconsecutive vertices of $P$, are absent, for otherwise $P$ would not be shortest. Writing $D(P)$ for the set of all bonds spanned by the vertices of $P$, one obtains
