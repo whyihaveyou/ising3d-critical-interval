@@ -2,7 +2,7 @@
 \section{Forcing a positive zero mode}\label{sec:ordered}
 % ======================================================================
 
-\Cref{lem:spectral} bounds five local correlations $X_i$ from above in terms of the unknown zero mode $q$ and the nearest-neighbour correlation $g$. If we could also bound a suitable combination of the $X_i$ and $g$ from below by local information, we would obtain a lower bound on $q$. This section carries out this idea. The local information consists of exact identities and inequalities valid in every periodic box. Its combination is controlled through the law of the spins on a small shell.
+\Cref{lem:spectral} bounds five local correlations $X_i$ from above in terms of the unknown zero mode $q$ and the nearest-neighbour correlation $g$. If we could also bound a suitable combination of the $X_i$ and $g$ from below by local information, we would obtain a lower bound on $q$. This section carries out this idea. The local information consists of exact identities and inequalities valid in every torus. Its combination is controlled through the law of the spins on a small shell.
 
 \subsection{Geometry and the shell marginal}\label{sec:geometry}
 
@@ -35,19 +35,24 @@ $\mu_L(\rT)=\avg f_L-\avg{f_a}_L=0$ by translation invariance of the periodic me
 
 The certificate uses $104$ translation rows $\rT_j$.
 
-The second family comes from reflection positivity~\cite{FILS78,Bis09}. Let $\vartheta$ be the reflection of $\T_L$ in a pair of bond-bisecting planes orthogonal to a coordinate axis, as in the proof of \cref{lem:rotation}. Let $\T^\ell,\T^r$ be the two halves. Normalize each crossing bond weight as $e^{K\sigma\sigma'}=e^{-K}M_{\sigma\sigma'}$ with
+The second family comes from reflection positivity~\cite{FILS78,Bis09}, which we use in the following form. Let $\vartheta$ be the reflection of $\T_L$ in a pair of bond-bisecting planes orthogonal to a coordinate axis, as in the proof of \cref{lem:rotation}, and let $\T^\ell,\T^r$ be the two halves. Write each crossing bond weight as $e^{K\sigma\sigma'}=e^{-K}M_{\sigma\sigma'}$ with
 \[
- M=\begin{pmatrix}r&1\\1&r\end{pmatrix}=M^{1/2}M^{1/2}.
+ M=\begin{pmatrix}r&1\\1&r\end{pmatrix}=M^{1/2}M^{1/2},
 \]
-Inserting $M_{\sigma_x\sigma_{\vartheta x}}=\sum_{c=1,2}(M^{1/2})_{\sigma_xc}(M^{1/2})_{c\sigma_{\vartheta x}}$ on every crossing bond writes the torus weight as $\sum_{\mathbf c}\Xi_{\mathbf c}(\sigma^\ell)\Xi_{\mathbf c}(\vartheta\sigma^r)$, as in \cref{lem:rotation}. Consequently, for every collection of functions $F_{\mathbf c}$ of the spins of $\T^\ell$,
+and insert $M_{\sigma_x\sigma_{\vartheta x}}=\sum_{\iota=1,2}(M^{1/2})_{\sigma_x\iota}(M^{1/2})_{\iota\sigma_{\vartheta x}}$ on every crossing bond. As in \cref{lem:rotation}, the torus weight becomes $\sum_{\boldsymbol\iota}\Xi_{\boldsymbol\iota}(\sigma^\ell)\Xi_{\boldsymbol\iota}(\vartheta\sigma^r)$. Consequently, for every collection of functions $F_{\boldsymbol\iota}$ of the spins of $\T^\ell$,
 \begin{equation}\label{eq:RP}
- \sum_{\mathbf c}\Bigl\langle\!\Bigl\langle F_{\mathbf c}\,\vartheta F_{\mathbf c}\Bigr\rangle\!\Bigr\rangle\ge0,
+ \sum_{\boldsymbol\iota}\Bigl\langle\!\Bigl\langle F_{\boldsymbol\iota}\,\vartheta F_{\boldsymbol\iota}\Bigr\rangle\!\Bigr\rangle\ge0,
 \end{equation}
-where $\langle\!\langle\cdot\rangle\!\rangle$ denotes the normalized sum with the split weights. The spin $\sigma_x$ at an endpoint of a crossing bond can be \emph{transported} to the auxiliary index. Since $\sigma_xM_{\sigma_x\sigma'}=(\mathrm{diag}(1,-1)M)_{\sigma_x\sigma'}$, replacing the column $M^{1/2}$ by $M^{-1/2}\mathrm{diag}(1,-1)M$ on the far side represents multiplication by $\sigma_x$. If both factors in~\eqref{eq:RP} carry a transported spin through the same crossing bond $\{x,\vartheta x\}$, the resulting Gram matrix is
+where $\langle\!\langle\cdot\rangle\!\rangle$ denotes the normalized sum with the split weights. Two refinements make~\eqref{eq:RP} applicable to local functions that straddle the cutting plane.
+\begin{itemize}
+\item \emph{Transported spins.} Since $\sigma_xM_{\sigma_x\sigma'}=(\mathrm{diag}(1,-1)M)_{\sigma_x\sigma'}$, a spin $\sigma_x$ at an endpoint of a crossing bond can be moved to the auxiliary index: replacing the column $M^{1/2}$ by $M^{-1/2}\mathrm{diag}(1,-1)M$ on the far side represents multiplication by $\sigma_x$.
+\item \emph{Doubled insertions.} If both factors in~\eqref{eq:RP} carry a transported spin through the same crossing bond $\{x,\vartheta x\}$, the resulting Gram matrix is
 \[
  (M^{-1/2}\mathrm{diag}(1,-1)M)^{\!\top}(M^{-1/2}\mathrm{diag}(1,-1)M)=\frac{M^3}{r^2-1}.
 \]
-Dividing it entrywise by $M$ gives the entries $c_0-\sigma_x\sigma_{\vartheta x}$, with the coefficient $c_0=u^{-1}+u$ of \cref{sec:infrared}. Thus every choice of coefficient vectors for finitely many local functions near the cutting plane, with or without transported spins, yields an inequality $\avg{\mathcal F}_L\ge0$ for an explicit local function $\mathcal F$.
+Divided entrywise by $M$, it has the entries $c_0-\sigma_x\sigma_{\vartheta x}$, with the coefficient $c_0=u^{-1}+u$ of \cref{sec:infrared}.
+\end{itemize}
+Thus every choice of coefficient vectors for finitely many local functions near the cutting plane, with or without transported spins, yields an inequality $\avg{\mathcal F}_L\ge0$ for an explicit local function $\mathcal F$.
 
 \begin{lemma}[Reflection rows]\label{lem:reflection}
 For each of the four coefficient vectors of \cref{cert:multipliers}, which have $112$ components, the conditional representative $\rA_k=\kappa_k\mathcal F_k^I$, normalized by a constant $\kappa_k>0$, satisfies $\mu_L(\rA_k)\ge0$.
@@ -145,7 +150,7 @@ as one checks in the three cases $b_i=b_j=a$, $b_i=b_j=-a$ and $b_i\ne b_j$. For
 \emph{Field labels.} Decompose the total factor at each shell site $j$ into the columns $(1,\rho_j)$ and $(\rho_j,1)$, and call the chosen column $f_j$. Summing the products of all decomposition coefficients over $\omega$, against its true weight, yields nonnegative numbers $p_L(c,f)$ for which~\eqref{eq:mixture} holds after normalization. Symmetry follows from the $\mathfrak G$-invariance of $\avg\cdot_L$ and the covariance of each decomposition.
 \end{proof}
 
-The mixture weights $p_L(c,f)$ carry the whole influence of the exterior and are not known explicitly. The labels at the two ends of a link are coupled through its preference, and the source labels are coupled through the exterior. The following two families of inequalities constrain them.
+The mixture weights $p_L(c,f)$ carry the whole influence of the exterior and are not known explicitly. The labels at the two ends of a link are coupled through its preference, and the corner sources are coupled through the exterior. The following two families of inequalities constrain them.
 
 Fix a link $t$ joining the axial site $i$ and the face site $j$. For a field label $f$ write $f^{(i)}$ for $f$ with the bit at $i$ flipped.
 
@@ -155,6 +160,7 @@ If $f_i\ne f_j$, then for every $c$
  p_L(c,f)\le\omega_i^{-1}p_L(c,f^{(i)})+\omega_j^{-1}p_L(c,f^{(j)}),\qquad
  \omega_k=\rho_k\,\frac{\rho_k/\eta-\rho_k}{1-\rho_k^2/\eta}>0 .
 \]
+We call $\omega_{\rm axial}$ and $\omega_{\rm face}$ the \emph{flip weights}.
 \end{lemma}
 
 \begin{proof}
@@ -183,7 +189,7 @@ The cap is obtained in two stages. Within a class of corner sources, the field-l
 Write $\cR_{c,f}=\nu_{c,f}(R_y)$, so that $\mu_L(R_y)=\sum_{c,f}p_L(c,f)\cR_{c,f}$ by \cref{lem:mixture}. Each $\cR_{c,f}$ is a ratio of two explicit finite sums over $2^{18}$ shell words.
 
 \begin{proposition}[Mixture cap]\label{prop:cap}
-For each class $C$ with representative $c_C$, suppose given $\epsilon\ge0$, numbers $R^{\rm hi}_C\ge R^{\rm lo}_C$, a set $H_C\subset\{\pm1\}^{\partial I}$, and for each $f\in H_C$ a link $t(f)=\{i,j\}$ with $f_i\ne f_j$ and $f^{(i)},f^{(j)}\notin H_C$, such that
+For each class $C$ with representative $c_C$, suppose given $\epsilon\ge0$, numbers $R^{\rm hi}_C\ge R^{\rm lo}_C$, a set $H_C\subset\{\pm1\}^{\partial I}$ of \emph{high labels}, and for each $f\in H_C$ a link $t(f)=\{i,j\}$ with $f_i\ne f_j$ and $f^{(i)},f^{(j)}\notin H_C$, such that
 \[
  \cR_{c_C,f}\le R^{\rm hi}_C+\epsilon\ \ \text{for all }f,\qquad
  \cR_{c_C,f}\le R^{\rm lo}_C+\epsilon\ \ \text{for }f\notin H_C .

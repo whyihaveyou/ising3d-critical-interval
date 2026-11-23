@@ -45,17 +45,20 @@ The argument is the Rosenbluth growth construction~\cite{RR55} read as a countin
 
 \subsection{A finite-memory automaton}
 
-Self-avoidance is a global constraint. We relax it to a constraint involving a bounded suffix of the walk. Paths on $\T_L$ are lifted to $\Z^3$: the \emph{lift} of $P$ is the lattice walk $\omega=(x_0,\dots,x_n)$ with $x_0=0$ and the same step directions $d_i=v_i-v_{i-1}$. Distinct sites of $\T_L$ have distinct lifts, so $\omega$ is self-avoiding.
+Self-avoidance is a global constraint. We replace it by a local one: a step is forbidden only if it returns to one of the recently visited vertices that are still close to the tip. Paths on $\T_L$ are first lifted to $\Z^3$. The \emph{lift} of $P$ is the lattice walk $\omega=(x_0,\dots,x_n)$ with $x_0=0$ and the same step directions $d_i=v_i-v_{i-1}$. Distinct sites of $\T_L$ have distinct lifts, so $\omega$ is self-avoiding.
 
 \begin{definition}[Suffix automaton]\label{def:automaton}
-Let $M=16$. A \emph{retained suffix} is a sequence $(y_0,\dots,y_m)$ of distinct sites of $\Z^3$ with $y_{k}\sim y_{k-1}$. Given a retained suffix and a direction $d$ with $y_m+d\notin\{y_0,\dots,y_m\}$, the \emph{update} appends $y_{m+1}=y_m+d$ and then deletes the initial segment $y_0,\dots,y_{j-1}$, where $j$ is the smallest index with
-\[
- (m+1-j)+\|y_{m+1}-y_j\|_1\le M .
-\]
-A \emph{state} is a retained suffix modulo translation and the $48$ signed permutations of the axes. The \emph{initial state} is the one-point suffix $(0)$ at the root. For a state $s$ let $A(s)$ be the set of direction labels $d$ with $y_m+d$ not in the suffix, and let $s_d$ be the state obtained by the update. Labels are kept with their multiplicity even when different labels lead to the same state. Starting from the initial state and applying all updates yields a finite set of states. We call it the \emph{automaton}.
+Fix the memory $M=16$.
+\begin{enumerate}
+\item A \emph{retained suffix} is a sequence $(y_0,\dots,y_m)$ of distinct sites of $\Z^3$ with $y_k\sim y_{k-1}$ for all $k$.
+\item For a direction $d$ with $y_m+d\notin\{y_0,\dots,y_m\}$, the \emph{update} by $d$ appends $y_{m+1}=y_m+d$. It then deletes $y_0,\dots,y_{j-1}$, where $j$ is the smallest index with $(m+1-j)+\|y_{m+1}-y_j\|_1\le M$.
+\item A \emph{state} is a retained suffix modulo translations and the $48$ signed permutations of the axes. The \emph{initial state} $s_0$ is the one-point suffix at the root.
+\item For a state $s$, the \emph{available labels} $A(s)$ are the directions $d$ with $y_m+d$ outside the suffix, and $s_d$ is the state after the update by $d$. Labels are counted with multiplicity, also when different labels lead to the same state.
+\end{enumerate}
+The \emph{automaton} is the finite set of states reachable from $s_0$, together with the labelled transitions $s\to s_d$.
 \end{definition}
 
-The rule keeps a vertex $y_j$ as long as a self-avoiding continuation could return to it within the memory range. For the bounds below, however, only two properties of the rule matter. The retained suffix consists of actual vertices of the walk, and it contains the last three vertices once at least two steps have been made, because $2+\|y_m-y_{m-2}\|_1\le4\le M$. The state therefore determines the last two step directions in its canonical frame, and with them the shape (\cref{def:shape}) of the triple completed by the next step.
+A vertex $y_j$ is kept as long as a self-avoiding continuation could return to it within $M$ steps. Only two properties of the rule are used below. First, the retained suffix consists of actual vertices of the walk. Second, after at least two steps it contains the last three vertices, since $2+\|y_m-y_{m-2}\|_1\le4\le M$. Consequently the state determines the last two step directions, and with them the shape (\cref{def:shape}) of the triple completed by the next step.
 
 \begin{lemma}[Domination by the automaton]\label{lem:automaton}
 Let $P$ be a path on $\T_L$ and let $s_0,s_1,\dots,s_n$ be the states obtained from the initial state by feeding the step directions of $P$. Then $s_{i+1}=(s_i)_{d_{i+1}}$ is defined for $i<n$. Moreover $B_i(P)\subseteq A(s_i)$ for $0\le i\le n$, where the labels of $s_i$ are identified with physical directions through the canonicalizing symmetry.
@@ -69,37 +72,37 @@ Periodic identifications, and returns to vertices older than the retained suffix
 
 \subsection{Transfer bounds}
 
-Let $\varphi$ assign a weight $\varphi(s,d)\ge0$ to every labelled transition and let $w>0$. For a vector $v$ indexed by states put
+Let $\varphi$ assign a weight $\varphi(s,d)\ge0$ to every labelled transition and let $\kappa>0$. For a vector $v$ indexed by states put
 \begin{equation}\label{eq:transfer}
- (\cT v)(s)=\max_{B\subseteq A(s)}w^{5-|B|}\sum_{d\in B}\varphi(s,d)\,v(s_d)\quad(s\ne s_0),\qquad
+ (\cT v)(s)=\max_{B\subseteq A(s)}\kappa^{5-|B|}\sum_{d\in B}\varphi(s,d)\,v(s_d)\quad(s\ne s_0),\qquad
  (\cT v)(s_0)=\sum_{d\in A(s_0)}\varphi(s_0,d)\,v((s_0)_d).
 \end{equation}
-For $v\ge0$ and fixed $|B|$, the maximum is attained by the $|B|$ largest summands, counted with multiplicity. If $w\le1$, it is attained at $B=A(s)$, and $\cT$ is linear.
+For $v\ge0$ and fixed $|B|$, the maximum is attained by the $|B|$ largest summands, counted with multiplicity. If $\kappa\le1$, it is attained at $B=A(s)$, and $\cT$ is linear.
 
 \begin{lemma}[Transfer bound]\label{lem:transfer}
 Suppose $v>0$ and $\cT v\le\Lambda v$ componentwise. For a path $P$ write $\Phi(P)=\prod_{i=0}^{n-1}\varphi(s_i,d_{i+1})$. Then for every even $L\ge8$ and $n\ge1$,
 \[
- \sum_{|P|=n}w^{c(P)}\,\Phi(P)\ \le\ \max(1,w^5)\,\frac{v(s_0)}{\min_sv(s)}\,\Lambda^n .
+ \sum_{|P|=n}\kappa^{c(P)}\,\Phi(P)\ \le\ \max(1,\kappa^5)\,\frac{v(s_0)}{\min_sv(s)}\,\Lambda^n .
 \]
 \end{lemma}
 
 \begin{proof}
 For a path $p$ of length $\ell$ with state $s(p)$, and $k\ge0$, let
 \[
- F_k(p)=\sum_q\ \prod_{i=\ell}^{\ell+k-1}w^{a_i(q)\one\{i\ge1\}}\varphi(s_i(q),d_{i+1}(q)),
+ F_k(p)=\sum_q\ \prod_{i=\ell}^{\ell+k-1}\kappa^{a_i(q)\one\{i\ge1\}}\varphi(s_i(q),d_{i+1}(q)),
 \]
-summed over all extensions $q$ of $p$ of length $\ell+k$. We show $F_k(p)\le\Lambda^kv(s(p))/\min v$. This is clear for $k=0$. Write $s=s(p)$ and $B=B_\ell(p)$, which satisfies $w^{a_\ell}=w^{5-|B|}$ for $\ell\ge1$ by \cref{lem:contacts}. Then
+summed over all extensions $q$ of $p$ of length $\ell+k$. We show $F_k(p)\le\Lambda^kv(s(p))/\min v$. This is clear for $k=0$. Write $s=s(p)$ and $B=B_\ell(p)$, which satisfies $\kappa^{a_\ell}=\kappa^{5-|B|}$ for $\ell\ge1$ by \cref{lem:contacts}. Then
 \[
 \begin{aligned}
- F_{k+1}(p)&=w^{(5-|B|)\one\{\ell\ge1\}}\sum_{d\in B}\varphi(s,d)F_k(p+d)\\
- &\le\frac{\Lambda^k}{\min v}\,w^{(5-|B|)\one\{\ell\ge1\}}\sum_{d\in B}\varphi(s,d)v(s_d)
+ F_{k+1}(p)&=\kappa^{(5-|B|)\one\{\ell\ge1\}}\sum_{d\in B}\varphi(s,d)F_k(p+d)\\
+ &\le\frac{\Lambda^k}{\min v}\,\kappa^{(5-|B|)\one\{\ell\ge1\}}\sum_{d\in B}\varphi(s,d)v(s_d)
  \le\frac{\Lambda^k(\cT v)(s)}{\min v}.
 \end{aligned}
 \]
-The first inequality uses the induction hypothesis and $s(p+d)=s_d$. The second uses $B\subseteq A(s)$ from \cref{lem:automaton} and the definition of $\cT$. Finally $(\cT v)(s)\le\Lambda v(s)$. Since $c(P)=\sum_{i=1}^na_i$, we get $\sum_{|P|=n}w^{c(P)}\Phi(P)\le\max_Pw^{a_n(P)}F_n(\text{root})$, and $a_n\le5$.
+The first inequality uses the induction hypothesis and $s(p+d)=s_d$. The second uses $B\subseteq A(s)$ from \cref{lem:automaton} and the definition of $\cT$. Finally $(\cT v)(s)\le\Lambda v(s)$. Since $c(P)=\sum_{i=1}^na_i$, we get $\sum_{|P|=n}\kappa^{c(P)}\Phi(P)\le\max_Pw^{a_n(P)}F_n(\text{root})$, and $a_n\le5$.
 \end{proof}
 
-We use two instances of \cref{lem:transfer}. The \emph{contact operator} has $\varphi\equiv1$ and $w=w_1:=10000/9991=(1-\theta_1)^{-1}$. Since $e^{\theta_1}<w_1$, it bounds $\sum_Pe^{\theta_1c(P)}$. The \emph{shape operator} has $w=1$, $\varphi(s,d)=\overline\Omega_\tau$ if $s$ has at least two steps and $\tau$ is the shape of the triple completed by $d$, and $\varphi(s,d)=1$ otherwise. For it
+We use two instances of \cref{lem:transfer}. The \emph{contact operator} has $\varphi\equiv1$ and $\kappa=\kappa_1:=10000/9991=(1-\theta_1)^{-1}$. Since $e^{\theta_1}<\kappa_1$, it bounds $\sum_Pe^{\theta_1c(P)}$. The \emph{shape operator} has $\kappa=1$, $\varphi(s,d)=\overline\Omega_\tau$ if $s$ has at least two steps and $\tau$ is the shape of the triple completed by $d$, and $\varphi(s,d)=1$ otherwise. For it
 \[
  \Phi(P)=\prod_{i=1}^{n-2}\overline\Omega_{\tau_i}\ \ge\ \Omega(P):=\exp\Bigl(-\sum_{i=1}^{n-2}w_{\tau_i}\Bigr),
 \]
@@ -108,7 +111,7 @@ because $\overline\Omega_\tau\ge1-w_\tau+w_\tau^2/2\ge e^{-w_\tau}$ for $w_\tau\
 \begin{certificate}[Transfer bounds]\label{cert:transfer}
 The automaton of \cref{def:automaton} has $12\,994\,574$ states, including the initial state, and $53\,221\,763$ labelled transitions.
 \begin{enumerate}[label=\textup{(\alph*)}]
-\item For the contact operator, with each power $w_1^j$, $0\le j\le5$, rounded up to the grid $10^{-8}\Z$, there is a positive integer vector $v$ with $\cT v\le\Lambda_1v$ and
+\item For the contact operator, with each power $\kappa_1^j$, $0\le j\le5$, rounded up to the grid $10^{-8}\Z$, there is a positive integer vector $v$ with $\cT v\le\Lambda_1v$ and
 \[
  \Lambda_1=\frac{473271745}{10^8}.
 \]
@@ -117,7 +120,7 @@ The largest row quotient is $7337944694907297/1550471750000000<\Lambda_1$.
 \[
  U_2=\frac{1182583}{250000}=4.730332 .
 \]
-\item For the \emph{unweighted operator}, with $\varphi\equiv1$ and $w=1$, there is a positive integer vector $v$ with $\cT v\le U_0v$ and
+\item For the \emph{unweighted operator}, with $\varphi\equiv1$ and $\kappa=1$, there is a positive integer vector $v$ with $\cT v\le U_0v$ and
 \[
  U_0=\frac{473195}{100000}=4.73195 .
 \]

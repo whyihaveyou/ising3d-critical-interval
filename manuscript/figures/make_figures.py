@@ -74,13 +74,13 @@ def prism():
     # legend
     lx, ly = 5.6, 1.1
     out.append(rf"\fill[black] ({lx},{ly}) circle (3.6pt) node[right=5pt,font=\small] {{hubs}};")
-    out.append(rf"\filldraw[fill=white,draw=black,line width=0.9pt] ({lx},{ly-0.55}) circle (3.2pt) node[right=5pt,font=\small] {{specified (label $h$)}};")
+    out.append(rf"\filldraw[fill=white,draw=black,line width=0.9pt] ({lx},{ly-0.55}) circle (3.2pt) node[right=5pt,font=\small] {{specified (pattern $h$)}};")
     out.append(rf"\filldraw[fill=black!35,draw=black!60] ({lx},{ly-1.1}) circle (2.6pt) node[right=5pt,font=\small] {{mark $1$}};")
     out.append(rf"\draw[red!70!black,line width=1.4pt,dash pattern=on 3pt off 2pt] ({lx-0.2},{ly-1.65}) -- ({lx+0.2},{ly-1.65}) node[right=3pt,font=\small,black] {{removed bond}};")
     out += [r"\end{tikzpicture}",
             r"\caption{The prism $\Pi(e)$ of \cref{def:prism}: two $3\times3$ squares at axial "
             r"coordinates $t=0,1$ and two crosses at $t=-1,2$, with all $51$ lattice bonds among the "
-            r"$28$ sites except $e$. The label $h(e)$ records which of the ten specified sites belong "
+            r"$28$ sites except $e$. The pattern $h(e)$ records which of the ten specified sites belong "
             r"to the path. The remaining $16$ sites are treated as occupied. Bonds between two sites of "
             r"mark $1$ carry the interpolation weight $s$, all other bonds the reference weight $u_0$.}",
             r"\label{fig:prism}", r"\end{figure}"]
@@ -176,7 +176,7 @@ def path():
             r"illustration; on $\T_L$ chords may also point out of the plane or across the periodic "
             r"identification. Open circles are the uncharged vertices: the endpoints and their "
             r"lattice neighbours on the path (shaded). Every induced bond at a charged vertex (black) has two "
-            r"interior endpoints, so the local rows (A1)--(A2) apply to it.}",
+            r"interior endpoints, so the local inequalities (A1)--(A2) apply to it.}",
             r"\label{fig:path}", r"\end{figure}"]
     return "\n".join(out) + "\n"
 

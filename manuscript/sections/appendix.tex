@@ -20,8 +20,8 @@ Certificate & Primary computation & Independent check\\
 \nolinkurl{lower/STAGE53_DISORDER_prism.py} ($u_*$), \nolinkurl{lower/STAGE54_WEIGHTED_shapes.py} ($u_2$). Spin sums by layer transfer over the two hub squares, integer common denominator. &
 \nolinkurl{lower/STAGE53_LOWER_AUDIT_verify.py} (coordinate spin transfer) and \nolinkurl{lower/STAGE53_PRISM_CHECK.py} (enumeration of all $2^{23}$ even and $2^{23}$ two-source bond sets via the cycle space). All $136$ stored integral rows agree at both panel ends at all test couplings.\tabularnewline
 \Cref{cert:allocation} (allocations) &
-Same programs. They enumerate all labelled neighbourhoods, roles and shapes. &
-Separate coordinate replay of $6400$ labelled path rows, $676$ chord rows and $240$ vertex stars at $u_2$. Lean: all $1637$ rows and $240$ vertex stars of part (a), \nolinkurl{STAGE54Prism.lean}.\tabularnewline
+Same programs. They enumerate all patterns, roles and shapes. &
+Separate coordinate replay of $6400$ path inequalities, $676$ chord inequalities and $240$ vertex inequalities at $u_2$. Lean: all $1637$ edge inequalities and $240$ vertex inequalities of part (a), \nolinkurl{STAGE54Prism.lean}.\tabularnewline
 \Cref{cert:transfer} (transfer bounds) &
 \nolinkurl{lower/STAGE54_CONTACT_robust.cpp} (a), \nolinkurl{lower/STAGE54_WEIGHTED_transfer.cpp} (b) and \nolinkurl{lower/STAGE42_DISORDER_PEER_saw.cpp} (c). The automaton is built by \nolinkurl{lower/verify_saw16_direct_straight_20261121.cpp}. &
 (a) \nolinkurl{lower/STAGE54_CONTACT_AUDIT.cpp} rechecks all rows with exact unrounded powers and all possible successor counts. (b) Reconstruction of every transition and its shape mark from coordinates, and comparison with all $81\,390$ seven-step lattice paths. (c) The root counts for $n\le17$ are compared with the exact enumeration of~\cite{SBB11}. The row inequalities of (b) and (c) are checked by the primary program only.\tabularnewline
@@ -58,7 +58,7 @@ All rounding is directed. Lower bounds for integrals, gains and odds constants a
 The Lean~4 files listed below were compiled with warnings treated as errors and rechecked with \texttt{leanchecker}. Their axioms are the standard \texttt{propext}, \texttt{Quot.sound} and \texttt{Classical.choice}.
 \begin{itemize}
 \item \nolinkurl{STAGE54Torus.lean}, \nolinkurl{STAGE54Kinetic.lean}: the bound of \cref{lem:rosenbluth} on the actual periodic graph $(\Z/L\Z)^3$ for every $L\ge3$, stated with cleared denominators as $\sum_P5^{c(P)}4^{5n-c(P)}\le6\cdot5^5(5\cdot4^5)^{n-1}$. The identity $c(P)=\sum_ia_i$ of \cref{lem:contacts} is proved along the way.
-\item \nolinkurl{STAGE54Prism.lean}, \nolinkurl{STAGE54PrismData.lean}: the $1637$ edge rows and $240$ vertex rows of \cref{cert:allocation}(a) from the frozen integer table of prism integrals.
+\item \nolinkurl{STAGE54Prism.lean}, \nolinkurl{STAGE54PrismData.lean}: the $1637$ edge inequalities and $240$ vertex inequalities of \cref{cert:allocation}(a) from the frozen integer table of prism integrals.
 \item \nolinkurl{STAGE57CertificateInterface.lean}:\\ positivity of denominators, exact cross-multiplications, finite row equalities and finite list totals used in the endpoint arithmetic.
 \end{itemize}
 These modules take the frozen tables as input. The completeness of the enumerations and the thermodynamic arguments are proved in the text.

@@ -14,7 +14,7 @@ The connective constant of $\Z^3$ satisfies $\mu\le U_0=4.73195$. Consequently
 \end{proposition}
 
 \begin{proof}
-The domination argument of \cref{lem:automaton} applies verbatim to self-avoiding walks on $\Z^3$, which are their own lifts. \Cref{lem:transfer} with $\varphi\equiv1$, $w=1$ and \cref{cert:transfer}(c) therefore bounds the number of $n$-step self-avoiding walks on $\Z^3$, and also the number of $n$-step paths from a fixed root on every even torus with $L\ge8$, by $(v(s_0)/\min v)\,U_0^n$. The first bound gives $\mu\le U_0$. For the second, drop the factor $e^{-I(P,u)}\le1$ in \cref{lem:selection}. This gives $\chi_L(K)\le1+(v(s_0)/\min v)\sum_{n\ge1}(uU_0)^n$, which is bounded uniformly in $L$ when $uU_0<1$. By \cref{prop:disorder}, $m_+(K)=0$ whenever $\tanh K<1/U_0$, and \cref{cor:monotone}(i) gives $\tanh K_c\ge1/U_0$, which is the claim.
+The domination argument of \cref{lem:automaton} applies verbatim to self-avoiding walks on $\Z^3$, which are their own lifts. \Cref{lem:transfer} with $\varphi\equiv1$, $\kappa=1$ and \cref{cert:transfer}(c) therefore bounds the number of $n$-step self-avoiding walks on $\Z^3$, and also the number of $n$-step paths from a fixed root on every even torus with $L\ge8$, by $(v(s_0)/\min v)\,U_0^n$. The first bound gives $\mu\le U_0$. For the second, drop the factor $e^{-I(P,u)}\le1$ in \cref{lem:selection}. This gives $\chi_L(K)\le1+(v(s_0)/\min v)\sum_{n\ge1}(uU_0)^n$, which is bounded uniformly in $L$ when $uU_0<1$. By \cref{prop:disorder}, $m_+(K)=0$ whenever $\tanh K<1/U_0$, and \cref{cor:monotone}(i) gives $\tanh K_c\ge1/U_0$, which is the claim.
 \end{proof}
 
 \Cref{prop:fisher} improves the bound $r_c>1.5349$ obtained from~\cite{PT00}. The remainder of this section improves it further by means of the factor $e^{-I(P,u)}$.
@@ -87,5 +87,5 @@ For $r$ in a right neighbourhood of $r_1=19269/12500=1.54152$, the susceptibilit
 \end{proposition}
 
 \begin{proof}
-Let $u\ge u_1>u_*$. The allocation of \cref{tab:charges1} is admissible for $\underline\ell(u_*)$ with $\Omega\equiv1$. Since $e^{\theta_1}<w_1$, \cref{lem:transfer,cert:transfer}(a) give~\eqref{eq:pathsum} with $\theta=\theta_1$ and $\rho=\Lambda_1$. By \cref{cert:endpoint-lower}(c), $u_1\Lambda_1e^{-\gamma_1}<u_1\Lambda_1/T_3(\gamma_1)<1$, and the strict inequality persists on a right neighbourhood. Conclude with \cref{prop:geometric,prop:disorder}.
+Let $u\ge u_1>u_*$. The allocation of \cref{tab:charges1} is admissible for $\underline\ell(u_*)$ with $\Omega\equiv1$. Since $e^{\theta_1}<\kappa_1$, \cref{lem:transfer,cert:transfer}(a) give~\eqref{eq:pathsum} with $\theta=\theta_1$ and $\rho=\Lambda_1$. By \cref{cert:endpoint-lower}(c), $u_1\Lambda_1e^{-\gamma_1}<u_1\Lambda_1/T_3(\gamma_1)<1$, and the strict inequality persists on a right neighbourhood. Conclude with \cref{prop:geometric,prop:disorder}.
 \end{proof}

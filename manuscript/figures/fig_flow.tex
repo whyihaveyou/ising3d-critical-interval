@@ -9,7 +9,7 @@
 % left column: disordered side
 \node[ana] (l1) {Shortest-path selection, \cref{lem:selection}\\[-1pt] $G_L\le\sum_Pu^{|P|}e^{-I(P,u)}$};
 \node[ana,below=of l1] (l2) {Interpolation identity, \cref{lem:interp}\\[-1pt] $I(P,u)=\sum_{e\in D(P)}\int_0^u\frac{C_e}{1+sC_e}$};
-\node[cer,below=of l2] (l3) {Prism integrals, \cref{cert:prism}\\[-1pt] $1024$ labels, $64$ panels};
+\node[cer,below=of l2] (l3) {Prism integrals, \cref{cert:prism}\\[-1pt] $1024$ patterns, $64$ panels};
 \node[cer,below=of l3] (l4) {Allocation, \cref{cert:allocation} $\Rightarrow$ \cref{prop:cost}\\[-1pt] $I+\theta c\ge\gamma(n-13)_++\sum w_\tau$};
 \node[cer,below=of l4] (l5) {Path sums, \cref{cert:transfer,lem:rosenbluth,lem:holder}\\[-1pt] $\sum_P\Omega(P)e^{\theta_2c(P)}\le C_2(U_2e^{\theta_2/4})^n$};
 \node[ana,below=of l5] (l6) {Uniform susceptibility bound, \cref{thm:lower}\\[-1pt] and disorder criterion, \cref{prop:disorder}};
