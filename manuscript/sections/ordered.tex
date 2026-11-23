@@ -209,7 +209,7 @@ Hence $\mu_L(R_y)\le\sum_Cp_C(h_C+S_C)+\epsilon\le\Uord$, since $\sum_Cp_C=1$.
 
 Let
 \[
- r_b=\frac{3775}{2386},\qquad y_b=\log r_b,\qquad d_1=\frac{4075}{10^{14}} .
+ r_b=\frac{3775}{2386},\qquad y_b=\log r_b,\qquad \Delta_b=\frac{4075}{10^{14}} .
 \]
 
 \begin{certificate}[Field caps at $r_b$]\label{cert:fields}
@@ -239,15 +239,15 @@ Choose a subsequence as in \cref{prop:lowerrow}, which is possible by compactnes
 The proof of \cref{prop:rb} works at any $r$ for which the inequalities of \cref{cert:fields} remain valid. We keep all combinatorial data fixed: the rows, the multipliers, $J_i^+$, $Q$, the sets $H_C$, the assignment $t$, the class multipliers, and the frozen lower bounds for the six odds constants. We then bound the variation of the field ratios with $y=\log r$.
 
 \begin{certificate}[Interval]\label{cert:interval}
-On $r\in[r_b-d_1,r_b]$ the following hold.
+On $r\in[r_b-\Delta_b,r_b]$ the following hold.
 \begin{enumerate}[label=\textup{(\alph*)}]
-\item Splitting $1/r\in[1/r_b,1/(r_b-d_1)]$ into $16$ equal intervals and evaluating with outward rounding on the grid $2^{-120}\Z$, the six odds constants stay strictly above their frozen values. The least gap is at least $1171\cdot10^{-14}$.
+\item Splitting $1/r\in[1/r_b,1/(r_b-\Delta_b)]$ into $16$ equal intervals and evaluating with outward rounding on the grid $2^{-120}\Z$, the six odds constants stay strictly above their frozen values. The least gap is at least $1171\cdot10^{-14}$.
 \item The $y$-derivative of a single row is bounded by $144$, $228$, $57792$ and $14208$ for translation, spectral, reflection and deletion rows respectively. Summed against the absolute multipliers, this gives $|\partial_yR_y(b)|<8326$ for all $b$.
 \item $|R_y(b)|<71/1000$ for all $b$ and $r$ in the interval.
 \item $|\partial_y\log\Psi_{c,f}(b)|\le468$ for a suitable $b$-independent normalization of $\Psi_{c,f}$.
 \item With $C_*=8326+468\cdot\frac{71}{1000}=\frac{2089807}{250}$, exact rational arithmetic gives
 \[
- L_b-\frac{C_*d_1}{Q(r_b-d_1)}>\frac{84723}{10^{15}} .
+ L_b-\frac{C_*\Delta_b}{Q(r_b-\Delta_b)}>\frac{84723}{10^{15}} .
 \]
 \end{enumerate}
 \end{certificate}
@@ -255,9 +255,9 @@ On $r\in[r_b-d_1,r_b]$ the following hold.
 The derivative constants in~(b) come from three facts. The $y$-derivative of the conditional representative of a $\pm1$-valued inner observable is at most $72$. One also has $0<J_i^+<1$ and $|\partial_yc_0|<12$. A normalized reflection row with $112$ components satisfies $\|v\|_1^2\le112\|v\|_2^2$. This gives $2\cdot72=144$, $3\cdot72+12=228$, $112(7\cdot72+12)=57792$ and $32(2\cdot72+300)=14208$, where $300$ bounds the derivative of the $150$-bond comparison correlations.
 
 \begin{theorem}\label{thm:upper}
-For every $r\in[r_b-d_1,r_b]$, $m_+(\tfrac12\log r)^2>84723\cdot10^{-15}$. Consequently
+For every $r\in[r_b-\Delta_b,r_b]$, $m_+(\tfrac12\log r)^2>84723\cdot10^{-15}$. Consequently
 \[
- e^{2K_c}\le r_b-d_1<r_b-\frac{407}{10^{13}}=r_+ .
+ e^{2K_c}\le r_b-\Delta_b<r_b-\frac{407}{10^{13}}=r_+ .
 \]
 \end{theorem}
 
@@ -266,11 +266,11 @@ Fix $r$ in the interval. By \cref{cert:interval}(a), \cref{lem:bridge,lem:classo
 \[
  \partial_y\,\nu_{c,f}(R_y)=\nu_{c,f}(\partial_yR_y)+\mathrm{Cov}_{\nu_{c,f}}\bigl(R_y,\partial_y\log\Psi_{c,f}\bigr).
 \]
-By \cref{cert:interval}(b)--(d) and the Cauchy--Schwarz inequality, $|\partial_y\nu_{c,f}(R_y)|\le C_*$. Since $|y-y_b|=\log(r_b/r)\le(r_b-r)/r\le d_1/(r_b-d_1)$, every field ratio at $r$ exceeds its value at $r_b$ by at most $C_*d_1/(r_b-d_1)$. Raising both caps $R^{\rm hi}_C,R^{\rm lo}_C$ by this amount raises each $h_C$, and hence $\Uord$, by the same amount. \Cref{prop:cap} gives $\mu_L(R_y)\le\Uord(r_b)+C_*d_1/(r_b-d_1)$, and $Q$ does not depend on $r$. As in the proof of \cref{prop:rb}, $m_+^2\ge L_b-C_*d_1/(Q(r_b-d_1))$, which exceeds $84723\cdot10^{-15}$ by \cref{cert:interval}(e). The last assertion follows from \cref{cor:monotone}(ii) at $r=r_b-d_1$ and from the identity $r_b-407\cdot10^{-13}=r_+$.
+By \cref{cert:interval}(b)--(d) and the Cauchy--Schwarz inequality, $|\partial_y\nu_{c,f}(R_y)|\le C_*$. Since $|y-y_b|=\log(r_b/r)\le(r_b-r)/r\le \Delta_b/(r_b-\Delta_b)$, every field ratio at $r$ exceeds its value at $r_b$ by at most $C_*\Delta_b/(r_b-\Delta_b)$. Raising both caps $R^{\rm hi}_C,R^{\rm lo}_C$ by this amount raises each $h_C$, and hence $\Uord$, by the same amount. \Cref{prop:cap} gives $\mu_L(R_y)\le\Uord(r_b)+C_*\Delta_b/(r_b-\Delta_b)$, and $Q$ does not depend on $r$. As in the proof of \cref{prop:rb}, $m_+^2\ge L_b-C_*\Delta_b/(Q(r_b-\Delta_b))$, which exceeds $84723\cdot10^{-15}$ by \cref{cert:interval}(e). The last assertion follows from \cref{cor:monotone}(ii) at $r=r_b-\Delta_b$ and from the identity $r_b-407\cdot10^{-13}=r_+$.
 \end{proof}
 
 \begin{remark}
-The multipliers were optimized so that $\Uord(r_b)$ is negative at a point $r_b$ as far to the left as possible. The resulting lower bounds on $m_+^2$, about $2.2\cdot10^{-7}$ at $r_b$ and $8.5\cdot10^{-11}$ at $r_b-d_1$, are accordingly small.
+The multipliers were optimized so that $\Uord(r_b)$ is negative at a point $r_b$ as far to the left as possible. The resulting lower bounds on $m_+^2$, about $2.2\cdot10^{-7}$ at $r_b$ and $8.5\cdot10^{-11}$ at $r_b-\Delta_b$, are accordingly small.
 \end{remark}
 
 \begin{proof}[Proof of \cref{thm:main}]

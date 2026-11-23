@@ -66,6 +66,10 @@ r_u0 = (U0 + 1) / (U0 - 1)
 lo_u, _ = log_bounds(r_u0)
 check("Proposition fisher", r_u0 > F("1.53591") and lo_u / 2 > F("0.21456"))
 check("Vigfusson baseline", 1 / F("5.0010") > F("0.19996"))
+mu_fs = F("4.865")
+r_fs = (mu_fs + 1) / (mu_fs - 1)
+lo_fs, hi_fs = log_bounds(r_fs)
+check("Fisher 1967 with mu < 4.865", r_fs > F("1.5174") and lo_fs / 2 > F("0.2085") and 2 / lo_fs < F("4.80"))
 
 # ---------------------------------------------------------------- couplings
 u = lambda r: (r - 1) / (r + 1)

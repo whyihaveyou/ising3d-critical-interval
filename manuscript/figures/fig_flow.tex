@@ -11,15 +11,15 @@
 \node[ana,below=of l1] (l2) {Interpolation identity, \cref{lem:interp}\\[-1pt] $I(P,u)=\sum_{e\in D(P)}\int_0^u\frac{C_e}{1+sC_e}$};
 \node[cer,below=of l2] (l3) {Prism integrals, \cref{cert:prism}\\[-1pt] $1024$ labels, $64$ panels};
 \node[cer,below=of l3] (l4) {Allocation, \cref{cert:allocation} $\Rightarrow$ \cref{prop:cost}\\[-1pt] $I+\theta c\ge\gamma(n-13)_++\sum w_\tau$};
-\node[cer,below=of l4] (l5) {Path sums, \cref{cert:transfer,lem:rosenbluth,lem:holder}\\[-1pt] $\sum_P\Omega(P)e^{\theta c(P)}\le C\,(Ue^{\theta/4})^n$};
+\node[cer,below=of l4] (l5) {Path sums, \cref{cert:transfer,lem:rosenbluth,lem:holder}\\[-1pt] $\sum_P\Omega(P)e^{\theta_2c(P)}\le C_2(U_2e^{\theta_2/4})^n$};
 \node[ana,below=of l5] (l6) {Uniform susceptibility bound, \cref{thm:lower}\\[-1pt] and disorder criterion, \cref{prop:disorder}};
 \node[res,below=of l6] (l7) {$r_c>r_-$};
 % right column: ordered side
 \node[ana,right=of l1] (r1) {Infrared bound, \cref{prop:infrared}\\[-1pt] $\lambda(k)\widehat G_L(k)\le u^{-1}+u-2g_L$};
 \node[cer,below=of r1] (r2) {Spectral rows, \cref{lem:spectral}\\[-1pt] Green enclosures, \cref{cert:green}};
 \node[ana,below=of r2] (r3) {Translation, reflection and deletion rows\\[-1pt] \cref{lem:translation,lem:reflection,lem:deletion}};
-\node[cer,below=of r3] (r4) {Residual $R$ on $18$ shell spins\\[-1pt] \cref{prop:lowerrow}:\  $0\le\lim_L\mu_L(R)+Qq$};
-\node[cer,below=of r4] (r5) {Mixture cap, $\mu_L(R)\le\Uord<0$\\[-1pt] \cref{prop:cap}, \cref{cert:fields}};
+\node[cer,below=of r3] (r4) {Residual $R_y$ on $18$ shell spins\\[-1pt] \cref{prop:lowerrow}:\  $0\le\lim_L\mu_L(R_y)+Qq$};
+\node[cer,below=of r4] (r5) {Mixture cap, $\mu_L(R_y)\le\Uord<0$\\[-1pt] \cref{prop:cap}, \cref{cert:fields}};
 \node[cer,below=of r5] (r6) {$q\ge-\Uord/Q$ on an interval\\[-1pt] \cref{cert:interval}, \cref{prop:order}};
 \node[res,below=of r6] (r7) {$r_c<r_+$};
 \foreach \a/\b in {l1/l2,l2/l3,l3/l4,l4/l5,l5/l6,l6/l7,r1/r2,r3/r4,r4/r5,r5/r6,r6/r7}

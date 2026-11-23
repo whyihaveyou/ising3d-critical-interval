@@ -158,7 +158,8 @@ def path():
     out.append(rf"\draw[black!10,step={s}] (-0.5,-0.5) grid ({s*9+0.5:.2f},{s*3+0.5:.2f});")
     # endpoint neighbourhoods
     for e in ends:
-        out.append(rf"\fill[orange!18,rounded corners=4pt] ({P(e)[0]-s*1.42:.3f},{P(e)[1]-s*1.42:.3f}) rectangle ({P(e)[0]+s*1.42:.3f},{P(e)[1]+s*1.42:.3f});")
+        x, y = P(e); d = s * 1.38
+        out.append(rf"\fill[orange!18,rounded corners=3pt] ({x-d:.3f},{y:.3f}) -- ({x:.3f},{y+d:.3f}) -- ({x+d:.3f},{y:.3f}) -- ({x:.3f},{y-d:.3f}) -- cycle;")
     for a, b in chords:
         out.append(rf"\draw[red!70!black,line width=1.0pt,dash pattern=on 2.5pt off 1.8pt] {fmt(P(a))} -- {fmt(P(b))};")
     for i in range(n):
@@ -174,7 +175,7 @@ def path():
             rf"\caption{{A path (solid) with its {len(chords)} chords (dashed), drawn in a plane for "
             r"illustration; on $\T_L$ chords may also point out of the plane or across the periodic "
             r"identification. Open circles are the uncharged vertices: the endpoints and their "
-            r"neighbours on the path (shaded). Every induced bond at a charged vertex (black) has two "
+            r"lattice neighbours on the path (shaded). Every induced bond at a charged vertex (black) has two "
             r"interior endpoints, so the local rows (A1)--(A2) apply to it.}",
             r"\label{fig:path}", r"\end{figure}"]
     return "\n".join(out) + "\n"
