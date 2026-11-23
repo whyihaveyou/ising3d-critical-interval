@@ -1,4 +1,4 @@
-# Two-sided bounds for the critical coupling of the simple-cubic Ising ferromagnet
+# Upper and lower bounds for the critical point of the three-dimensional Ising model
 
 This repository contains the manuscript sources and the verification material for the theorem
 
