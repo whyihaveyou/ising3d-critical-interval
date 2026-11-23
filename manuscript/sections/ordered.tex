@@ -105,6 +105,8 @@ The values $R_y(b)$ have either sign, and $\max_bR_y(b)$ is positive. An upper b
 
 \subsection{A mixture representation of the shell marginal}\label{sec:mixture}
 
+The marginal $\mu_L$ depends on the unknown configuration outside the shell. We remove this dependence in two steps. First we sum over a thin layer of spins next to the shell: the eight corners, the $24$ link sites and three sites on each of the six half-axes. Each summed spin leaves a factor in the shell spins, and we bracket it between two extreme cases. Expanding every factor in these two cases writes $\mu_L$ as a mixture of explicit finite measures. The measures are indexed by auxiliary binary labels, and only the mixture weights depend on the exterior.
+
 Put $\zeta=1/r=e^{-2K}$. With the normalization in which a bond contributes $1$ if its spins agree and $\zeta$ otherwise, we use the following constants:
 \begin{equation}\label{eq:shellconstants}
  \xi=\frac{\zeta+\zeta^5}{\sqrt{(1+\zeta^6)(\zeta^2+\zeta^4)}},\qquad
@@ -143,7 +145,7 @@ as one checks in the three cases $b_i=b_j=a$, $b_i=b_j=-a$ and $b_i\ne b_j$. For
 \emph{Field labels.} Decompose the total factor at each shell site $j$ into the columns $(1,\rho_j)$ and $(\rho_j,1)$, and call the chosen column $f_j$. Summing the products of all decomposition coefficients over $\omega$, against its true weight, yields nonnegative numbers $p_L(c,f)$ for which~\eqref{eq:mixture} holds after normalization. Symmetry follows from the $\mathfrak G$-invariance of $\avg\cdot_L$ and the covariance of each decomposition.
 \end{proof}
 
-The weights $p_L(c,f)$ depend on the exterior configuration. The labels at the two ends of a link are coupled through its preference, and the source labels are coupled through the exterior. The following two families of inequalities constrain them.
+The mixture weights $p_L(c,f)$ carry the whole influence of the exterior and are not known explicitly. The labels at the two ends of a link are coupled through its preference, and the source labels are coupled through the exterior. The following two families of inequalities constrain them.
 
 Fix a link $t$ joining the axial site $i$ and the face site $j$. For a field label $f$ write $f^{(i)}$ for $f$ with the bit at $i$ flipped.
 
@@ -175,6 +177,8 @@ Fix the exterior and the other seven sources, and retain the corner $z$, its six
 \end{proof}
 
 \subsection{The upper cap}\label{sec:cap}
+
+The cap is obtained in two stages. Within a class of corner sources, the field-label average of $R_y$ is a convex combination of a large cap on a few \emph{high} labels and a smaller cap on all others. The bridge inequality limits the weight of the high labels. Across classes, the class odds, combined with nonnegative multipliers, average the class caps.
 
 Write $\cR_{c,f}=\nu_{c,f}(R_y)$, so that $\mu_L(R_y)=\sum_{c,f}p_L(c,f)\cR_{c,f}$ by \cref{lem:mixture}. Each $\cR_{c,f}$ is a ratio of two explicit finite sums over $2^{18}$ shell words.
 
