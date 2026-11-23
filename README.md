@@ -52,6 +52,7 @@ python3 -B STAGE53_PRISM_CHECK.py --cross-check
 c++ -O3 -std=c++17 STAGE54_CONTACT_robust.cpp -o walk_check && ./walk_check 16 40 10000 9991
 c++ -O3 -std=c++17 STAGE54_CONTACT_AUDIT.cpp -o walk_audit && ./walk_audit bulk
 c++ -O3 -std=c++17 STAGE54_WEIGHTED_transfer.cpp -o shape_check && ./shape_check 16 28
+c++ -O3 -std=c++17 STAGE42_DISORDER_PEER_saw.cpp -o saw_check && ./saw_check   # mu(Z^3) <= 4.73195
 python3 -B verify_stage54_weighted_prism.py
 cd ../upper/new_endpoint
 python3 -B replay.py directed

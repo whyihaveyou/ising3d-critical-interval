@@ -2,6 +2,23 @@
 \section{Proof of the lower bound}\label{sec:lower}
 % ======================================================================
 
+\subsection{Fisher's bound with the automaton}
+
+Before using the induced bonds we record what the automaton gives on its own.
+
+\begin{proposition}\label{prop:fisher}
+The connective constant of $\Z^3$ satisfies $\mu\le U_0=4.73195$. Consequently
+\[
+ e^{2K_c}\ \ge\ \frac{U_0+1}{U_0-1}\ >\ 1.53591,\qquad K_c>0.21456 .
+\]
+\end{proposition}
+
+\begin{proof}
+The domination argument of \cref{lem:automaton} applies verbatim to self-avoiding walks on $\Z^3$, which are their own lifts. \Cref{lem:transfer} with $\varphi\equiv1$, $w=1$ and \cref{cert:transfer}(c) therefore bounds the number of $n$-step self-avoiding walks on $\Z^3$, and also the number of $n$-step paths from a fixed root on every even torus with $L\ge8$, by $(v(s_0)/\min v)\,U_0^n$. The first bound gives $\mu\le U_0$. For the second, drop the factor $e^{-I(P,u)}\le1$ in \cref{lem:selection}. This gives $\chi_L(K)\le1+(v(s_0)/\min v)\sum_{n\ge1}(uU_0)^n$, which is bounded uniformly in $L$ when $uU_0<1$. By \cref{prop:disorder}, $m_+(K)=0$ whenever $\tanh K<1/U_0$, and \cref{cor:monotone}(i) gives $\tanh K_c\ge1/U_0$, which is the claim.
+\end{proof}
+
+\Cref{prop:fisher} improves the bound $r_c>1.5349$ obtained from~\cite{PT00}. The remainder of this section improves it further by means of the factor $e^{-I(P,u)}$.
+
 \subsection{A susceptibility criterion}
 
 Write $T_3(x)=1+x+x^2/2+x^3/6$. For $x>0$ one has $T_3(x)<e^x$.

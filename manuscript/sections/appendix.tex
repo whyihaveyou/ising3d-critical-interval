@@ -23,8 +23,8 @@ Certificate & Primary computation & Independent check\\
 Same programs. They enumerate all labelled neighbourhoods, roles and shapes. &
 Separate coordinate replay of $6400$ labelled path rows, $676$ chord rows and $240$ vertex stars at $u_2$. Lean: all $1637$ rows and $240$ vertex stars of part (a), \nolinkurl{STAGE54Prism.lean}.\tabularnewline
 \Cref{cert:transfer} (transfer bounds) &
-\nolinkurl{lower/STAGE54_CONTACT_robust.cpp} (a) and \nolinkurl{lower/STAGE54_WEIGHTED_transfer.cpp} (b). The automaton is built by \nolinkurl{lower/verify_saw16_direct_straight_20261121.cpp}. &
-(a) \nolinkurl{lower/STAGE54_CONTACT_AUDIT.cpp} rechecks all rows with exact unrounded powers and all possible successor counts. (b) Reconstruction of every transition and its shape mark from coordinates, and comparison with all $81\,390$ seven-step lattice paths. The row inequality of (b) itself is checked by the primary program only.\tabularnewline
+\nolinkurl{lower/STAGE54_CONTACT_robust.cpp} (a), \nolinkurl{lower/STAGE54_WEIGHTED_transfer.cpp} (b) and \nolinkurl{lower/STAGE42_DISORDER_PEER_saw.cpp} (c). The automaton is built by \nolinkurl{lower/verify_saw16_direct_straight_20261121.cpp}. &
+(a) \nolinkurl{lower/STAGE54_CONTACT_AUDIT.cpp} rechecks all rows with exact unrounded powers and all possible successor counts. (b) Reconstruction of every transition and its shape mark from coordinates, and comparison with all $81\,390$ seven-step lattice paths. (c) The root counts for $n\le17$ are compared with the exact enumeration of~\cite{SBB11}. The row inequalities of (b) and (c) are checked by the primary program only.\tabularnewline
 \Cref{lem:rosenbluth} &
 Proof in text. &
 Lean, \nolinkurl{STAGE54Torus.lean} and \nolinkurl{STAGE54Kinetic.lean}, for $(\Z/L\Z)^3$, $L\ge3$.\tabularnewline
@@ -90,6 +90,8 @@ c++ -O3 -std=c++17 STAGE54_WEIGHTED_transfer.cpp -o shape_check
 ./shape_check 16 28
 python3 -B STAGE54_WEIGHTED_shapes.py
 python3 -B verify_stage54_weighted_prism.py
+c++ -O3 -std=c++17 STAGE42_DISORDER_PEER_saw.cpp -o saw_check
+./saw_check
 \end{verbatim}
 for the ordered side
 \begin{verbatim}

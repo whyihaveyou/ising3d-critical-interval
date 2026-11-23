@@ -15,3 +15,4 @@ manuscript/*.fls
 manuscript/*.fdb_latexmk
 manuscript/*.synctex.gz
 manuscript/main.pdf
+saw_check
