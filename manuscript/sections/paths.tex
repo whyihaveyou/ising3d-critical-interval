@@ -2,6 +2,8 @@
 \section{Shortest paths and the cost of induced bonds}\label{sec:paths}
 % ======================================================================
 
+This section shows that the weight of a shortest path decays exponentially in its length, up to a price paid for each chord (\cref{prop:cost}). The argument has four steps. A shortest path in a high-temperature graph forbids all bonds spanned by its vertices (\cref{lem:selection}). The cost of removing these bonds is a sum of correlation integrals (\cref{lem:interp}). Each integral is bounded below on a fixed $28$-site graph (\cref{lem:prismbound,cert:prism}). Finally the integrals are redistributed to the vertices of the path (\cref{def:allocation,cert:allocation}).
+
 Throughout \cref{sec:paths,sec:counting,sec:lower}, $L\ge8$ is even and $G_L(x,y)=\avg{\sigma_x\sigma_y}_{L,K}$ denotes the zero-field periodic two-point function.
 
 \subsection{Selected paths}

@@ -2,9 +2,11 @@
 \section{Preliminaries}\label{sec:prelim}
 % ======================================================================
 
+This section fixes notation, recalls standard facts about the Ising model, and proves two propositions (\cref{prop:disorder,prop:order}) that convert estimates on periodic boxes into statements about the plus-state magnetization. Both halves of the proof end with one of them.
+
 \subsection{Periodic boxes and standard inequalities}
 
-For an even integer $L\ge4$ let $\T_L=(\Z/L\Z)^3$ be the discrete torus, $E_L$ its set of unoriented nearest-neighbour bonds, and $V=L^3$ its number of sites. Since $L\ge3$, every site has six distinct neighbours and $|E_L|=3V$. We write $e_1,e_2,e_3$ for the coordinate unit vectors and $\|\cdot\|_1$ for the $\ell^1$-norm. The periodic Gibbs measure at coupling $K$ and field $h$ is
+For an even integer $L\ge4$ let $\T_L=(\Z/L\Z)^3$ be the discrete torus, $E_L$ its set of unoriented nearest-neighbour bonds, and $V=L^3$ its number of sites. Every site has six distinct neighbours and $|E_L|=3V$. We write $e_1,e_2,e_3$ for the coordinate unit vectors and $\|\cdot\|_1$ for the $\ell^1$-norm. The periodic Gibbs measure at coupling $K$ and field $h$ is
 \[
  \mu_{L,K,h}(\sigma)=\frac{1}{Z_L(K,h)}\exp\Big(K\sum_{\{x,y\}\in E_L}\sigma_x\sigma_y+h\sum_{x\in\T_L}\sigma_x\Big),
  \qquad \sigma\in\{-1,1\}^{\T_L},
