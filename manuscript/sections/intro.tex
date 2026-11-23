@@ -6,9 +6,9 @@
 
 The Ising model is the simplest model of a phase transition. In three dimensions its critical point is the prototype of a universality class that also contains the liquid--vapour critical point and uniaxial magnets~\cite{PV02}. In two dimensions the model is exactly solvable. Kramers and Wannier located the critical point by duality~\cite{KW41}, Onsager computed the free energy~\cite{Ons44}, and Yang computed the spontaneous magnetization~\cite{Yan52}. No comparable solution is known in three dimensions. Nevertheless the critical behaviour has been determined with remarkable precision by high-temperature series, Monte Carlo simulation and, more recently, the conformal bootstrap~\cite{PV02,FXL18,EPPRSV12,KPSV16}.
 
-The rigorous theory has also advanced substantially. In every dimension $d\ge2$ the transition is sharp~\cite{ABF87,DCT16}. In three dimensions the spontaneous magnetization vanishes continuously at the critical point~\cite{ADCS15}, and the infrared bound of Fr\"ohlich, Simon and Spencer~\cite{FSS76} controls the two-point function. In four dimensions the scaling limit is Gaussian~\cite{AD21}. These results describe the \emph{nature} of the transition. The present paper is concerned with its \emph{location}: we determine the critical coupling of the simple-cubic model to within an explicit interval of relative width $2.6\%$.
+The rigorous theory of the transition has also advanced substantially. In every dimension $d\ge2$ the transition is \emph{sharp}~\cite{ABF87,DCT16}. In the language of physics, there is a single critical point: correlations decay exponentially throughout the high-temperature phase, and the susceptibility diverges exactly where the spontaneous magnetization appears. In three dimensions the spontaneous magnetization moreover vanishes continuously at the critical point~\cite{ADCS15}, so the transition is of second order. In four and more dimensions the critical behaviour is mean-field and the scaling limit is Gaussian~\cite{AD21}. Three dimensions is thus both the physically most relevant case and the one in which the critical behaviour is least understood. These results concern the \emph{nature} of the transition. The present paper is concerned with its \emph{location}: we determine the critical point of the simple-cubic model to within an explicit interval of relative width $2.6\%$.
 
-\subsection{The critical coupling}
+\subsection{The critical point}
 
 Let $\Lambda\subset\Z^3$ be finite and let $E(\Lambda)$ denote the set of unoriented nearest-neighbour bonds $\{x,y\}$ with $x,y\in\Lambda$, each bond counted once. For a dimensionless coupling $K=J/(k_{\mathrm B}T)>0$, a dimensionless magnetic field $h\in\R$ and a boundary condition $\eta\in\{-1,+1\}^{\Z^3}$, the Ising Gibbs measure on $\{-1,+1\}^\Lambda$ is
 \begin{equation}\label{eq:gibbs}
@@ -17,12 +17,12 @@ Let $\Lambda\subset\Z^3$ be finite and let $E(\Lambda)$ denote the set of unorie
  +K\!\!\sum_{\substack{x\in\Lambda,\ y\notin\Lambda\\ |x-y|=1}}\!\!\sigma_x\eta_y
  +h\sum_{x\in\Lambda}\sigma_x\Big).
 \end{equation}
-We write $\avg{\,\cdot\,}^+_{\Lambda,K,h}$ for the expectation with the plus boundary condition $\eta\equiv+1$ and $B_R=\{-R,\dots,R\}^3$. The plus-state spontaneous magnetization and the critical coupling are
+We write $\avg{\,\cdot\,}^+_{\Lambda,K,h}$ for the expectation with the plus boundary condition $\eta\equiv+1$ and $B_R=\{-R,\dots,R\}^3$. The plus-state spontaneous magnetization and the critical point are
 \begin{equation}\label{eq:Kc}
  m_+(K)=\lim_{R\to\infty}\avg{\sigma_0}^+_{B_R,K,0},\qquad
  K_c=\inf\{K>0:\ m_+(K)>0\}.
 \end{equation}
-The limit exists and $m_+$ is nondecreasing in $K$ by the Griffiths inequalities (\cref{sec:prelim}). Throughout we use the two parametrizations
+Thus $K_c$ is the critical inverse temperature measured in units of $J$, and we refer to it as the critical point. The limit exists and $m_+$ is nondecreasing in $K$ by the Griffiths inequalities (\cref{sec:prelim}). Throughout we use the two parametrizations
 \begin{equation}\label{eq:ru}
  r=e^{2K},\qquad u=\tanh K=\frac{r-1}{r+1},
 \end{equation}
