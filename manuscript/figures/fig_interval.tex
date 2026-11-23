@@ -9,7 +9,7 @@
 \foreach \t in {0.5,1.5,2.5,3.5,4.5,5.5,6.5}{\draw (\t,0.04) -- (\t,-0.04);}
 % markers
 \newcommand{\mk}[4]{\draw[#4,thick] (#1,-0.18) -- (#1,#2); \node[#4,above,font=\scriptsize,align=center] at (#1,#2) {#3};}
-\mk{0.4945302}{0.55}{Fisher with\\$\mu\le4.7387$}{black!70}
+\draw[black!70,thick] (0.4945302,-0.18) -- (0.4945302,0.55); \node[black!70,above left=0pt and -6pt,font=\scriptsize,align=right] at (0.4945302,0.55) {Fisher with\\$\mu\le4.7387$};
 \mk{1.1630483}{0.9}{$r_-$}{blue!70!black}
 \draw[black!70,thick] (2.7854029,-0.18) -- (2.7854029,0.55); \node[black!70,above left=0pt and -4pt,font=\scriptsize,align=right] at (2.7854029,0.55) {Monte Carlo\\$r_c\approx1.55785$};
 \mk{5.2145851}{0.9}{$r_+$}{blue!70!black}
