@@ -120,7 +120,17 @@ Put $\zeta=1/r=e^{-2K}$. With the normalization in which a bond contributes $1$ 
 \end{equation}
 where $\phi_0=\zeta$ and $\phi_{m+1}=(\zeta+\zeta^4\phi_m)/(1+\zeta^5\phi_m)$. All of them lie in $(0,1)$ and are algebraic in $\zeta$. The quantities $\xi^2$, $\eta$, $\rho$ entering below are rational at rational $r$.
 
-The basic device is elementary: if $0<\rho<1$ and $x=(x_+,x_-)$ is a positive vector with $\rho\le x_-/x_+\le\rho^{-1}$, then $x$ is a nonnegative combination of the two \emph{columns} $(1,\rho)$ and $(\rho,1)$. Applying it to a factor of the Gibbs weight introduces an auxiliary binary label, the choice of column, and summing over the label restores the weight.
+Two elementary facts are used repeatedly. The first describes how a ratio of weights propagates through a single spin. Write $F(x)=(\zeta+x)/(1+\zeta x)$; it is increasing on $[0,\infty)$ and satisfies $F(1/x)=1/F(x)$.
+
+\begin{lemma}[Transfer of odds]\label{lem:oddstransfer}
+Let $x$ be a site with neighbour $y$, and suppose that, with all other variables fixed, the remaining factors of the weight give $\sigma_x$ the two values $(\alpha_+,\alpha_-)$ with $\alpha_-/\alpha_+\in[\rho,\rho^{-1}]$ for some $\rho\in(0,1]$. Then summing over $\sigma_x$ gives $\sigma_y$ a factor $(\beta_+,\beta_-)$ with $\beta_-/\beta_+\in[F(\rho),F(\rho)^{-1}]$.
+\end{lemma}
+
+\begin{proof}
+In the normalization of agreeing bonds, $\beta_+=\alpha_++\zeta\alpha_-$ and $\beta_-=\zeta\alpha_++\alpha_-$, so $\beta_-/\beta_+=F(\alpha_-/\alpha_+)$. The claim follows from the monotonicity of $F$ and $F(1/x)=1/F(x)$.
+\end{proof}
+
+The second fact is the decomposition device: if $0<\rho<1$ and $x=(x_+,x_-)$ is a positive vector with $\rho\le x_-/x_+\le\rho^{-1}$, then $x$ is a nonnegative combination of the two \emph{columns} $(1,\rho)$ and $(\rho,1)$. Applying it to a factor of the Gibbs weight introduces an auxiliary binary label, the choice of column, and summing over the label restores the weight.
 
 \begin{lemma}[Mixture representation]\label{lem:mixture}
 For $c\in\{\pm1\}^{\mathcal C}$, a \emph{corner source}, and $f\in\{\pm1\}^{\partial I}$, a \emph{field label}, define
@@ -145,7 +155,7 @@ Condition on the spins $\omega$ outside $I\cup\partial I\cup\mathcal C\cup\{\tex
 \]
 as one checks in the three cases $b_i=b_j=a$, $b_i=b_j=-a$ and $b_i\ne b_j$. For a general outward pattern the factor is a nonnegative mixture of the two cases $a=\pm1$. We call $a$ the \emph{preference} of the link.
 
-\emph{Axial segments.} Tracing the three sites of an axial segment, each with four outward neighbours, gives a factor whose ratio in $b_i$ is bounded below by $\phi_3$. Combined with the $\eta^{1/2}$-factors of its four links, the total factor at an axial site has ratio in $[\rho_{\rm axial},\rho_{\rm axial}^{-1}]$. At a face site the two links give ratio in $[\eta,\eta^{-1}]$.
+\emph{Axial segments.} The three sites of an axial segment each have four outward neighbours. Tracing them from the outermost inwards and applying the computation of \cref{lem:oddstransfer} with the four outward bonds in the least favourable configuration gives the recursion $\phi_{m+1}=(\zeta+\zeta^4\phi_m)/(1+\zeta^5\phi_m)$, started from the ratio $\phi_0=\zeta$ of a single bond. Hence the factor at the axial shell site has ratio in $[\phi_3,\phi_3^{-1}]$. Combined with the $\eta^{1/2}$-factors of its four links, the total factor at an axial site has ratio in $[\rho_{\rm axial},\rho_{\rm axial}^{-1}]$. At a face site the two links give ratio in $[\eta,\eta^{-1}]$.
 
 \emph{Field labels.} Decompose the total factor at each shell site $j$ into the columns $(1,\rho_j)$ and $(\rho_j,1)$, and call the chosen column $f_j$. Summing the products of all decomposition coefficients over $\omega$, against its true weight, yields nonnegative numbers $p_L(c,f)$ for which~\eqref{eq:mixture} holds after normalization. Symmetry follows from the $\mathfrak G$-invariance of $\avg\cdot_L$ and the covariance of each decomposition.
 \end{proof}
@@ -178,8 +188,18 @@ Let $C,C'$ be classes such that a representative of $C'$ is obtained from one of
 with $F(x)=(\zeta+x)/(1+\zeta x)$, $l=F(\zeta^5)$ and $a_\pm=F(\zeta^4F(l^2\zeta^{\mp3}))$.
 \end{lemma}
 
-\begin{proof}[Sketch]
-Fix the exterior and the other seven sources, and retain the corner $z$, its six axial two-step arms and the $21$ further neighbours of the arm endpoints. Each of the $21$ leaves has five neighbours outside. Tracing it through its arm gives an odds ratio of at least $l$. Tracing the three outer branches gives coefficient odds of at least $(\varpi-\zeta^3)/(1-\zeta^3\varpi)$ for the column associated with the new sign. Tracing the three inner branches and the corner spin, with $m$ matching sources, gives a further factor of at least $(\upsilon_m+\zeta^3)/(1+\zeta^3\upsilon_m)$. The comparison concerns unnormalized weights. It therefore survives the average over the exterior, including events of zero mass. Finally sum over field labels.
+\begin{proof}
+Fix the configuration outside the $13$-site star consisting of $z$ and its six two-step arms $z+te$, $t\in\{1,2\}$, where $e$ runs over the three inner directions (towards the face sites) and the three outer directions. Fix also the other seven corner sources. Their decomposition coefficients are then constants, so it suffices to compare the unnormalized weights $W_\pm$ of the two values of $c_z$.
+
+\emph{Leaves.} The \emph{leaves} are the $21$ sites outside the star adjacent to the second points of the arms: five for each outer arm and two for each inner arm. Each leaf has five neighbours outside the star. By \cref{lem:oddstransfer} with $\rho=\zeta^5$, tracing such a leaf gives its arm site a factor with ratio in $[l,l^{-1}]$, $l=F(\zeta^5)$.
+
+\emph{Outer branches.} The second point of an outer arm receives five leaves, hence a factor with ratio in $[l^5,l^{-5}]$, and \cref{lem:oddstransfer} transfers it to the first point as $F(l^5)$. The first point has four further fixed neighbours, which contribute a ratio of at least $\zeta^4$. Transferring once more, the three outer branches together give $z$ a factor whose ratio $x$ satisfies $x\in[\varpi,\varpi^{-1}]$ with $\varpi=F(\zeta^4F(l^5))^3$. The coefficient of the column associated with the sign $\pm$ in the decomposition of this factor into the columns $(1,\zeta^3)$ and $(\zeta^3,1)$ is obtained by inverting the $2\times2$ matrix with diagonal $1$ and off-diagonal $\zeta^3$. The ratio of the two coefficients equals $(x-\zeta^3)/(1-\zeta^3x)$, which is increasing in $x$ and therefore at least $(\varpi-\zeta^3)/(1-\zeta^3\varpi)>0$ in favour of either sign.
+
+\emph{Inner branches.} The first point of an inner arm is a face site, and its second point is a corner $z'\ne z$. The outward field of $z'$ has been replaced by its fixed source, which acts like three bonds of strength $K$, that is, with ratio $\zeta^{\mp3}$ according to whether the source of $z'$ agrees with the new value of $c_z$. The two remaining neighbours of $z'$ outside the star are leaves, and the face site has four further fixed neighbours, which contribute at least $\zeta^4$. Two applications of \cref{lem:oddstransfer} show that each inner branch gives $z$ a factor with ratio at least $a_+=F(\zeta^4F(l^2\zeta^{-3}))$ if the neighbouring source agrees and $a_-=F(\zeta^4F(l^2\zeta^{3}))$ otherwise. With $m$ agreeing sources the three inner branches give a ratio of at least $\upsilon_m=a_-^{3-m}a_+^m$.
+
+\emph{The corner spin.} Summing over $\sigma_z$ with the column of the source $c_z$ multiplies the source odds by the factor $(\upsilon+\zeta^3)/(1+\zeta^3\upsilon)$, where $\upsilon$ is the ratio contributed by the inner branches. This factor is increasing in $\upsilon$ and hence at least $(\upsilon_m+\zeta^3)/(1+\zeta^3\upsilon_m)$.
+
+Combining the three steps gives $W_{\rm new}\ge\beta_mW_{\rm old}$ for every fixed configuration outside the star. The inequality concerns unnormalized weights, so it can be summed over the exterior configuration and over the field labels, also on events of zero mass. Summing over the representatives of $C$ and $C'$ and dividing by the class sizes gives the claim.
 \end{proof}
 
 \subsection{The upper cap}\label{sec:cap}
