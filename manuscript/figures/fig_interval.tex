@@ -11,14 +11,14 @@
 \newcommand{\mk}[4]{\draw[#4,thick] (#1,-0.18) -- (#1,#2); \node[#4,above,font=\scriptsize,align=center] at (#1,#2) {#3};}
 \draw[black!70,thick] (0.4945302,-0.18) -- (0.4945302,0.55); \node[black!70,above left=0pt and -6pt,font=\scriptsize,align=right] at (0.4945302,0.55) {Fisher with\\$\mu\le4.7387$};
 \mk{1.1630483}{0.9}{$r_-$}{blue!70!black}
-\draw[black!70,thick] (2.7854029,-0.18) -- (2.7854029,0.55); \node[black!70,above left=0pt and -4pt,font=\scriptsize,align=right] at (2.7854029,0.55) {Monte Carlo\\$r_c\approx1.55785$};
+\draw[black!70,thick] (2.7854029,-0.18) -- (2.7854029,0.55); \node[black!70,above left=0pt and -4pt,font=\scriptsize,align=right] at (2.7854029,0.55) {Monte Carlo~\cite{FXL18}\\$r_c\approx1.55785$};
 \mk{5.2145851}{0.9}{$r_+$}{blue!70!black}
 \mk{5.6312094}{1.25}{\cref{cor:singlesite}\\$\sqrt{1+\mathsf W}$}{black!70}
 \draw[-{Stealth[length=4pt]},black!70,thick] (6.75,0.55) -- (7.25,0.55);
 \draw[-{Stealth[length=4pt]},black!70,thick] (-0.25,1.45) -- (-0.85,1.45);
 \node[black!70,above,font=\scriptsize,align=center] at (-0.55,1.5) {\cite{Fis67}: $1.5174$\\\cite{Vig85}: $1.4917$};
-\node[black!70,above,font=\scriptsize,align=center] at (6.95,0.6) {FSS: $1.6578$};
+\node[black!70,above,font=\scriptsize,align=center] at (6.95,0.6) {\cite{FSS76}: $1.6578$};
 \end{tikzpicture}
-\caption{The interval of \cref{thm:main} (shaded), compared with Fisher's bound combined with the connective-constant bound of~\cite{PT00}, Fisher's original evaluation~\cite{Fis67}, the bound of~\cite{Vig85} quoted in~\cite{BLU17} and the Fr\"ohlich--Simon--Spencer bound (the last three off scale), the single-site bound of \cref{cor:singlesite}, and the Monte Carlo estimate of~\cite{FXL18}. \Cref{prop:fisher} gives $1.53591$, just to the right of Fisher's bound.}
+\caption{The interval of \cref{thm:main} (shaded), compared with Fisher's bound combined with the connective-constant bound of~\cite{PT00}, Fisher's original evaluation~\cite{Fis67}, the bound of~\cite{Vig85} quoted in~\cite{BLU17} and the bound of Fr\"ohlich, Simon and Spencer (FSS)~\cite{FSS76} (the last three off scale), the single-site bound of \cref{cor:singlesite}, and the most precise Monte Carlo estimate~\cite{FXL18}. \Cref{prop:fisher} gives $1.53591$, just to the right of Fisher's bound.}
 \label{fig:interval}
 \end{figure}
