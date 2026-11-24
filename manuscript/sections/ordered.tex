@@ -199,8 +199,12 @@ Fix the configuration outside the $13$-site star consisting of $z$ and its six t
 
 \emph{The corner spin.} Summing over $\sigma_z$ with the column of the source $c_z$ multiplies the source odds by the factor $(\upsilon+\zeta^3)/(1+\zeta^3\upsilon)$, where $\upsilon$ is the ratio contributed by the inner branches. This factor is increasing in $\upsilon$ and hence at least $(\upsilon_m+\zeta^3)/(1+\zeta^3\upsilon_m)$.
 
-Combining the three steps gives $W_{\rm new}\ge\beta_mW_{\rm old}$ for every fixed configuration outside the star. The inequality concerns unnormalized weights, so it can be summed over the exterior configuration and over the field labels, also on events of zero mass. Summing over the representatives of $C$ and $C'$ and dividing by the class sizes gives the claim.
+Combining the three steps gives $W_{\rm new}\ge\beta_mW_{\rm old}$ for every fixed configuration outside the star. The inequality concerns unnormalized weights, so it can be summed over the exterior configuration and over the field labels, also on events of zero mass. This gives $\sum_fp_L(c',f)\ge\beta_m\sum_fp_L(c,f)$ for the two sources $c\in C$ and $c'=c^{(z)}\in C'$. By symmetry each source of a class $C$ has mass $p_C/n_C$, which proves the claim.
+
+The number $m$ depends only on the pair of classes. Indeed, let $E(c)$ be the number of edges of the cube $\{\pm1\}^3$ whose endpoints carry equal sources. It is invariant under $\mathfrak G$ and under the global flip, and flipping $c_z$ changes it by $m-(3-m)=2m-3$. Hence $m=(E(c')-E(c)+3)/2$ is determined by $C$ and $C'$.
 \end{proof}
+
+The program \nolinkurl{upper/STAGE29_ORDERED_corner.py} checks the geometric facts used in this proof for all eight corners: the star has $13$ sites, there are $21$ leaves, each first point has four neighbours outside the star and each leaf has five. It also recomputes each $\beta_m$ as an exact sum over the $2^{13}$ configurations of the star, and enumerates the $40$ ordered pairs of classes joined by a single flip.
 
 \subsection{The upper cap}\label{sec:cap}
 
