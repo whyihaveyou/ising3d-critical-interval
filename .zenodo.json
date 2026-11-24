@@ -1,0 +1,10 @@
+{
+  "title": "Upper and lower bounds for the critical point of the three-dimensional Ising model: manuscript sources and verification programs",
+  "upload_type": "software",
+  "description": "Manuscript sources, certificate programs, input tables and output logs for the computer-assisted proof of the bounds 1.541630483 < e^{2K_c} < 1.582145851 on the critical point of the nearest-neighbour Ising ferromagnet on Z^3.",
+  "creators": [
+    {"name": "Qiu, Zhongpu", "affiliation": "Beijing Normal University; Shanghai Artificial Intelligence Laboratory"}
+  ],
+  "license": "MIT",
+  "keywords": ["Ising model", "critical point", "connective constant", "reflection positivity", "computer-assisted proof"]
+}
