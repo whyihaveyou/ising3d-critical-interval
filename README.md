@@ -1,5 +1,7 @@
 # Upper and lower bounds for the critical point of the three-dimensional Ising model
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24487984.svg)](https://doi.org/10.5281/zenodo.24487984)
+
 This repository contains the manuscript sources and the verification material for the theorem
 
 ```
